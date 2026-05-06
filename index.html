@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizon Digital • Conectando Angola ao Mundo Digital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body { font-family: 'Inter', system_ui, sans-serif; }
+        .service-card { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .service-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1); }
+        .whatsapp-float { position: fixed; bottom: 25px; right: 25px; background: #25D366; color: white; width: 62px; height: 62px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 15px -3px rgb(37 211 102 / 0.4); z-index: 999; font-size: 30px; }
+    </style>
+</head>
+<body class="bg-zinc-950 text-white">
+    
+    <!-- NAVBAR -->
+    <nav class="bg-zinc-900 border-b border-zinc-800 fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-x-3">
+                    <div class="w-12 h-12 bg-gradient-to-br from-amber-400 to-yellow-500 rounded-2xl flex items-center justify-center shadow-lg">
+                        <span class="text-zinc-950 font-bold text-4xl">H</span>
+                    </div>
+                    <div>
+                        <span class="font-bold text-3xl tracking-tighter">HORIZON</span>
+                        <span class="font-bold text-3xl tracking-tighter text-amber-400">DIGITAL</span>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex items-center gap-x-9 text-sm font-medium">
+                    <a href="#home" class="hover:text-amber-400 transition">Início</a>
+                    <a href="#servicos" class="hover:text-amber-400 transition">Serviços</a>
+                    <a href="#depoimentos" class="hover:text-amber-400 transition">Depoimentos</a>
+                    <a href="#faq" class="hover:text-amber-400 transition">FAQ</a>
+                </div>
+                
+                <div class="flex items-center gap-x-4">
+                    <a href="https://wa.me/244924122757" target="_blank" class="hidden md:flex items-center gap-x-2 bg-white text-zinc-950 px-6 py-2.5 rounded-2xl text-sm font-semibold hover:bg-amber-400 transition">
+                        <i class="fab fa-whatsapp"></i> <span>WhatsApp</span>
+                    </a>
+                    <button id="mobile-menu-btn" class="md:hidden w-11 h-11 flex items-center justify-center text-2xl">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- HERO -->
+    <section id="home" class="pt-20 min-h-screen flex items-center bg-[radial-gradient(#1a2f1a_0.8px,transparent_1px)] bg-[length:4px_4px]">
+        <div class="max-w-5xl mx-auto px-6 pt-12 pb-20 text-center">
+            <div class="max-w-3xl mx-auto">
+                <div class="inline-flex items-center gap-x-2 bg-zinc-900 border border-zinc-700 px-5 py-2 rounded-3xl mb-6 text-lg font-medium text-amber-400">
+                    Saudações Cordiais meus caros clientes
+                </div>
+                
+                <h1 class="text-6xl md:text-7xl font-bold tracking-tighter leading-none mb-6">
+                    Conectando<br>Angola ao<br><span class="text-amber-400">mundo digital</span>
+                </h1>
+                
+                <p class="text-2xl text-zinc-300 max-w-lg mx-auto mb-10">Tudo que precisas para crescer no digital, num só lugar.</p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="https://wa.me/244924122757?text=Olá!%20Quero%20saber%20mais%20sobre%20os%20serviços%20da%20Horizon%20Digital" target="_blank" class="flex items-center justify-center gap-x-3 bg-gradient-to-r from-amber-400 to-yellow-500 text-zinc-950 font-bold px-10 py-4 rounded-3xl text-lg">
+                        <i class="fab fa-whatsapp text-2xl"></i> <span>Falar no WhatsApp</span>
+                    </a>
+                    <a href="#servicos" class="flex items-center justify-center gap-x-3 border border-zinc-700 hover:bg-zinc-900 px-8 py-4 rounded-3xl font-semibold">Ver Serviços</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CONTADORES -->
+    <section class="max-w-6xl mx-auto px-6 py-16 border-t border-zinc-800">
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-8 text-center">
+            <div><div class="text-5xl font-bold text-amber-400" id="clientes">0</div><div class="text-zinc-400 mt-1">Clientes satisfeitos</div></div>
+            <div><div class="text-5xl font-bold text-amber-400" id="satisfacao">0</div><div class="text-zinc-400 mt-1">Taxa de satisfação</div></div>
+            <div><div class="text-5xl font-bold text-amber-400" id="servicos">0</div><div class="text-zinc-400 mt-1">Serviços entregues</div></div>
+        </div>
+    </section>
+    
+    <!-- SERVIÇOS EM DESTAQUE -->
+    <section id="servicos" class="max-w-7xl mx-auto px-6 py-20 border-t border-zinc-800">
+        <div class="text-center mb-14">
+            <span class="text-amber-400 text-sm font-semibold tracking-[3px]">SERVIÇOS PRINCIPAIS</span>
+            <h2 class="text-5xl font-bold tracking-tight mt-3">O que oferecemos</h2>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="service-card bg-zinc-900 border border-amber-400 rounded-3xl p-8">
+                <div class="w-14 h-14 bg-amber-900/50 rounded-2xl flex items-center justify-center mb-6"><i class="fas fa-credit-card text-amber-400 text-3xl"></i></div>
+                <h3 class="text-2xl font-semibold mb-3">Cartões Visa</h3>
+                <p class="text-zinc-400 text-sm mb-4">Pagamentos internacionais rápidos e seguros.</p>
+                <a href="#visa" class="text-amber-400 font-semibold text-sm">Ver planos →</a>
+            </div>
+            
+            <div class="service-card bg-zinc-900 border border-zinc-700 rounded-3xl p-8">
+                <div class="w-14 h-14 bg-violet-900/50 rounded-2xl flex items-center justify-center mb-6"><i class="fas fa-chart-line text-violet-400 text-3xl"></i></div>
+                <h3 class="text-2xl font-semibold mb-3">Tráfego Pago</h3>
+                <p class="text-zinc-400 text-sm mb-4">Aumente suas vendas com anúncios profissionais.</p>
+                <a href="#trafego" class="text-violet-400 font-semibold text-sm">Ver pacotes →</a>
+            </div>
+            
+            <div class="service-card bg-zinc-900 border border-zinc-700 rounded-3xl p-8">
+                <div class="w-14 h-14 bg-blue-900/50 rounded-2xl flex items-center justify-center mb-6"><i class="fas fa-play-circle text-blue-400 text-3xl"></i></div>
+                <h3 class="text-2xl font-semibold mb-3">Streaming</h3>
+                <p class="text-zinc-400 text-sm mb-4">Netflix, Amazon Prime e mais.</p>
+                <a href="#streaming" class="text-blue-400 font-semibold text-sm">Ver planos →</a>
+            </div>
+            
+            <div class="service-card bg-zinc-900 border border-zinc-700 rounded-3xl p-8">
+                <div class="w-14 h-14 bg-orange-900/50 rounded-2xl flex items-center justify-center mb-6"><i class="fas fa-palette text-orange-400 text-3xl"></i></div>
+                <h3 class="text-2xl font-semibold mb-3">Design Digital</h3>
+                <p class="text-zinc-400 text-sm mb-4">Flyers, Currículos e Cartas de Apresentação.</p>
+                <a href="#design" class="text-orange-400 font-semibold text-sm">Ver serviços →</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CARTÕES VISA (COM BOTÃO VER MAIS) -->
+    <section id="visa" class="max-w-5xl mx-auto px-6 py-20 border-t border-zinc-800">
+        <div class="bg-zinc-900 border border-amber-400 rounded-3xl p-10 md:p-14">
+            <div class="text-center mb-10">
+                <div class="inline-flex items-center gap-x-3 bg-amber-400 text-zinc-950 px-5 py-1.5 rounded-3xl mb-4">
+                    <i class="fas fa-credit-card"></i>
+                    <span class="font-bold">MAIS PROCURADO</span>
+                </div>
+                <h2 class="text-4xl font-bold">Cartões Visa Internacionais</h2>
+            </div>
+            
+            <!-- 2 Cartões Principais -->
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+                <div class="bg-zinc-800 border border-amber-400 rounded-3xl p-8">
+                    <div class="mb-6">
+                        <div class="font-bold text-2xl">Pexx</div>
+                        <div class="text-sm text-zinc-400">Ideal para iniciantes</div>
+                        <div class="mt-4"><span class="text-5xl font-bold text-amber-400">4.000</span> <span class="text-lg text-zinc-400">Kz</span></div>
+                    </div>
+                    <ul class="text-sm space-y-2 text-zinc-300 mb-6">
+                        <li class="flex items-center gap-x-2"><i class="fas fa-check text-emerald-400"></i> Ativação em 5 minutos</li>
+                        <li class="flex items-center gap-x-2"><i class="fas fa-check text-emerald-400"></i> Suporte 24/7</li>
+                    </ul>
+                    <a href="https://wa.me/244924122757?text=Olá!%20Quero%20o%20cartão%20Pexx%20de%204.000%20Kz" class="block text-center bg-amber-400 hover:bg-amber-500 text-zinc-950 font-bold py-3.5 rounded-2xl">Comprar por 4.000 Kz</a>
+                </div>
+                
+                <div class="bg-zinc-800 rounded-3xl p-8">
+                    <div class="mb-6">
+                        <div class="font-bold text-2xl">TevauPay</div>
+                        <div class="text-sm text-zinc-400">Mais completo</div>
+                        <div class="mt-4"><span class="text-5xl font-bold text-amber-400">2.000</span> <span class="text-lg text-zinc-400">Kz</span></div>
+                    </div>
+                    <ul class="text-sm space-y-2 text-zinc-300 mb-6">
+                        <li class="flex items-center gap-x-2"><i class="fas fa-check text-emerald-400"></i> Limites mais altos</li>
+                        <li class="flex items-center gap-x-2"><i class="fas fa-check text-emerald-400"></i> Suporte prioritário</li>
+                    </ul>
+                    <a href="https://wa.me/244924122757?text=Olá!%20Quero%20o%20cartão%20TevauPay%20de%202.000%20Kz" class="block text-center border border-amber-400 hover:bg-amber-400 hover:text-zinc-950 font-bold py-3.5 rounded-2xl">Comprar por 2.000 Kz</a>
+                </div>
+            </div>
+            
+            <!-- BOTÃO VER MAIS CARTÕES -->
+            <div class="text-center">
+                <button onclick="mostrarMaisCartoes()" class="inline-flex items-center gap-x-2 border border-amber-400 hover:bg-amber-400 hover:text-zinc-950 text-amber-400 font-semibold px-8 py-3 rounded-2xl transition">
+                    Ver mais cartões Visa <i class="fas fa-chevron-down"></i>
+                </button>
+            </div>
+            
+            <!-- Cartões Adicionais (escondidos) -->
+            <div id="mais-cartoes" class="hidden mt-8 grid md:grid-cols-2 gap-4">
+                <div class="bg-zinc-800 p-6 rounded-3xl">
+                    <div class="flex justify-between items-start">
+                        <div><div class="font-bold">Bybit</div><div class="text-sm text-zinc-400">Virtual</div></div>
+                        <div class="text-right"><div class="text-2xl font-bold text-amber-400">5.000 Kz</div></div>
+                    </div>
+                    <a href="https://wa.me/244924122757?text=Olá!%20Quero%20o%20cartão%20Bybit%20de%205.000%20Kz" class="mt-4 block text-center border border-amber-400 hover:bg-amber-400 hover:text-zinc-950 py-2.5 rounded-2xl text-sm font-semibold">Comprar</a>
+                </div>
+                
+                <div class="bg-zinc-800 p-6 rounded-3xl">
+                    <div class="flex justify-between items-start">
+                        <div><div class="font-bold">RedotPay</div><div class="text-sm text-zinc-400">Virtual</div></div>
+                        <div class="text-right"><div class="text-2xl font-bold text-amber-400">12.000 Kz</div></div>
+                    </div>
+                    <a href="https://wa.me/244924122757?text=Olá!%20Quero%20o%20cartão%20RedotPay%20de%2012.000%20Kz" class="mt-4 block text-center border border-amber-400 hover:bg-amber-400 hover:text-zinc-950 py-2.5 rounded-2xl text-sm font-semibold">Comprar</a>
+                </div>
+                
+                <div class="bg-zinc-800 p-6 rounded-3xl">
+                    <div class="flex justify-between items-start">
+                        <div><div class="font-bold">Jeton</div><div class="text-sm text-zinc-400">Virtual</div></div>
+                        <div class="text-right"><div class="text-2xl font-bold text-amber-400">10.000 Kz</div></div>
+                    </div>
+                    <a href="https://wa.me/244924122757?text=Olá!%20Quero%20o%20cartão%20Jeton%20de%2010.000%20Kz" class="mt-4 block text-center border border-amber-400 hover:bg-amber-400 hover:text-zinc-950 py-2.5 rounded-2xl text-sm font-semibold">Comprar</a>
+                </div>
+                
+                <div class="bg-zinc-800 p-6 rounded-3xl">
+                    <div class="flex justify-between items-start">
+                        <div><div class="font-bold">MyPay</div><div class="text-sm text-zinc-400">Virtual</div></div>
+                        <div class="text-right"><div class="text-2xl font-bold text-amber-400">3.500 Kz</div></div>
+                    </div>
+                    <a href="https://wa.me/244924122757?text=Olá!%20Quero%20o%20cartão%20MyPay%20de%203.500%20Kz" class="mt-4 block text-center border border-amber-400 hover:bg-amber-400 hover:text-zinc-950 py-2.5 rounded-2xl text-sm font-semibold">Comprar</a>
+                </div>
+                
+                <div class="bg-zinc-800 p-6 rounded-3xl md:col-span-2">
+                    <div class="flex justify-between items-start">
+                        <div><div class="font-bold">Cartão Físico Bybit</div><div class="text-sm text-zinc-400">Físico</div></div>
+                        <div class="text-right"><div class="text-2xl font-bold text-amber-400">17.000 Kz</div></div>
+                    </div>
+                    <a href="https://wa.me/244924122757?text=Olá!%20Quero%20o%20Cartão%20Físico%20Bybit%20de%2017.000%20Kz" class="mt-4 block text-center border border-amber-400 hover:bg-amber-400 hover:text-zinc-950 py-2.5 rounded-2xl text-sm font-semibold">Comprar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- TRÁFEGO PAGO -->
+    <section id="trafego" class="max-w-6xl mx-auto px-6 py-20 border-t border-zinc-800">
+        <div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8 md:p-10">
+            <div class="text-center mb-8">
+                <div class="inline-flex items-center gap-x-3 bg-violet-900/30 px-5 py-1.5 rounded-3xl mb-3">
+                    <i class="fas fa-bullhorn text-violet-400"></i>
+                    <span class="text-violet-400 font-semibold">TRÁFEGO PAGO</span>
+                </div>
+                <h2 class="text-3xl font-bold">Impulsione suas vendas</h2>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                <div class="bg-zinc-800 p-4 rounded-2xl text-center"><div class="text-sm text-zinc-400">2 Dias</div><div class="text-2xl font-bold text-amber-400">3.000 Kz</div></div>
+                <div class="bg-zinc-800 p-4 rounded-2xl text-center"><div class="text-sm text-zinc-400">3 Dias</div><div class="text-2xl font-bold text-amber-400">4.500 Kz</div></div>
+                <div class="bg-zinc-800 p-4 rounded-2xl text-center"><div class="text-sm text-zinc-400">5 Dias</div><div class="text-2xl font-bold text-amber-400">7.500 Kz</div></div>
+                <div class="bg-zinc-800 p-4 rounded-2xl text-center"><div class="text-sm text-zinc-400">10 Dias</div><div class="text-2xl font-bold text-amber-400">15.000 Kz</div></div>
+                <div class="bg-zinc-800 p-4 rounded-2xl text-center"><div class="text-sm text-zinc-400">15 Dias</div><div class="text-2xl font-bold text-amber-400">22.500 Kz</div></div>
+                <div class="bg-zinc-800 p-4 rounded-2xl text-center"><div class="text-sm text-zinc-400">20 Dias</div><div class="text-2xl font-bold text-amber-400">30.000 Kz</div></div>
+                <div class="bg-zinc-800 p-4 rounded-2xl text-center"><div class="text-sm text-zinc-400">30 Dias</div><div class="text-2xl font-bold text-amber-400">45.000 Kz</div></div>
+                <div class="bg-zinc-800 p-4 rounded-2xl text-center"><div class="text-sm text-zinc-400">50 Dias</div><div class="text-2xl font-bold text-amber-400">75.000 Kz</div></div>
+            </div>
+            
+            <div class="text-center mt-8">
+                <a href="https://wa.me/244924122757?text=Olá!%20Quero%20Tráfego%20Pago" class="inline-flex items-center gap-x-3 bg-violet-400 hover:bg-violet-500 text-zinc-950 font-bold px-10 py-4 rounded-3xl text-lg">Quero Impulsionar meu Negócio</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- STREAMING -->
+    <section id="streaming" class="max-w-5xl mx-auto px-6 py-20 border-t border-zinc-800">
+        <div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-10 md:p-14">
+            <div class="text-center mb-10">
+                <div class="inline-flex items-center gap-x-3 bg-blue-900/30 px-5 py-1.5 rounded-3xl mb-4">
+                    <i class="fas fa-play-circle text-blue-400"></i>
+                    <span class="text-blue-400 font-semibold">STREAMING</span>
+                </div>
+                <h2 class="text-4xl font-bold">Serviços de Streaming</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-zinc-800 p-8 rounded-3xl">
+                    <div class="flex items-center gap-x-3 mb-6">
+                        <div class="text-4xl">📺</div>
+                        <div><div class="font-bold text-2xl">Netflix</div></div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 text-sm mb-6">
+                        <div class="bg-zinc-700 p-4 rounded-2xl"><div class="font-semibold">Móvel</div><div class="text-xl font-bold text-blue-400">4.500 Kz</div></div>
+                        <div class="bg-zinc-700 p-4 rounded-2xl"><div class="font-semibold">Básico</div><div class="text-xl font-bold text-blue-400">6.000 Kz</div></div>
+                        <div class="bg-zinc-700 p-4 rounded-2xl"><div class="font-semibold">Padrão</div><div class="text-xl font-bold text-blue-400">12.100 Kz</div></div>
+                        <div class="bg-zinc-700 p-4 rounded-2xl"><div class="font-semibold">Premium</div><div class="text-xl font-bold text-blue-400">15.100 Kz</div></div>
+                    </div>
+                    <a href="https://wa.me/244924122757?text=Olá!%20Quero%20Netflix" class="block text-center bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 rounded-2xl">Comprar Netflix</a>
+                </div>
+                
+                <div class="bg-zinc-800 p-8 rounded-3xl">
+                    <div class="flex items-center gap-x-3 mb-6">
+                        <div class="text-4xl">🎬</div>
+                        <div><div class="font-bold text-2xl">Amazon Prime Video</div></div>
+                    </div>
+                    <div class="text-center py-6">
+                        <div class="text-5xl font-bold text-amber-400">12.000 Kz</div>
+                        <div class="text-sm text-zinc-400 mt-1">Conta Premium</div>
+                    </div>
+                    <a href="https://wa.me/244924122757?text=Olá!%20Quero%20Amazon%20Prime" class="block text-center bg-amber-400 hover:bg-amber-500 text-zinc-950 font-bold py-3 rounded-2xl">Comprar Amazon Prime</a>
+                </div>
+            </div>
+            
+            <div class="text-center mt-8">
+                <button onclick="mostrarMaisStreaming()" class="inline-flex items-center gap-x-2 text-blue-400 hover:text-blue-300 font-semibold">
+                    Ver mais serviços (HBO, Disney+, etc) <i class="fas fa-chevron-down"></i>
+                </button>
+            </div>
+            
+            <div id="mais-streaming" class="hidden mt-6 grid md:grid-cols-2 gap-4">
+                <div class="bg-zinc-800 p-6 rounded-3xl flex justify-between items-center">
+                    <div><div class="font-bold">HBO Max</div><div class="text-sm text-zinc-400">Conta Premium</div></div>
+                    <div class="text-right"><div class="text-xl font-bold text-purple-400">14.500 Kz</div></div>
+                </div>
+                <div class="bg-zinc-800 p-6 rounded-3xl flex justify-between items-center">
+                    <div><div class="font-bold">Disney+</div><div class="text-sm text-zinc-400">Conta Premium</div></div>
+                    <div class="text-right"><div class="text-xl font-bold text-purple-400">13.000 Kz</div></div>
+                </div>
+                <div class="bg-zinc-800 p-6 rounded-3xl flex justify-between items-center">
+                    <div><div class="font-bold">YouTube Premium</div><div class="text-sm text-zinc-400">Individual</div></div>
+                    <div class="text-right"><div class="text-xl font-bold text-red-400">6.500 Kz</div></div>
+                </div>
+                <div class="bg-zinc-800 p-6 rounded-3xl flex justify-between items-center">
+                    <div><div class="font-bold">Spotify Premium</div><div class="text-sm text-zinc-400">Individual</div></div>
+                    <div class="text-right"><div class="text-xl font-bold text-green-400">5.500 Kz</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- DESIGN + MENTORIA -->
+    <section class="max-w-7xl mx-auto px-6 py-20 border-t border-zinc-800">
+        <div class="grid lg:grid-cols-2 gap-6">
+            
+            <div id="design" class="bg-zinc-900 border border-zinc-700 rounded-3xl p-10">
+                <div class="flex items-center gap-x-3 mb-8">
+                    <i class="fas fa-palette text-4xl text-orange-400"></i>
+                    <h3 class="text-3xl font-bold">Design Digital</h3>
+                </div>
+                
+                <div class="space-y-4">
+                    <div class="flex justify-between bg-zinc-800 p-4 rounded-2xl"><span class="font-semibold">Flyer Digital</span><span class="font-bold text-amber-400">1.000 Kz</span></div>
+                    <div class="flex justify-between bg-zinc-800 p-4 rounded-2xl"><span class="font-semibold">Currículo (Português)</span><span class="font-bold text-amber-400">1.000 Kz</span></div>
+                    <div class="flex justify-between bg-zinc-800 p-4 rounded-2xl"><span class="font-semibold">Currículo (Inglês)</span><span class="font-bold text-amber-400">2.000 Kz</span></div>
+                    <div class="flex justify-between bg-zinc-800 p-4 rounded-2xl"><span class="font-semibold">Carta de Apresentação</span><span class="font-bold text-amber-400">1.000 Kz</span></div>
+                </div>
+                
+                <a href="https://wa.me/244924122757?text=Olá!%20Quero%20Design%20Digital" class="mt-8 block text-center bg-orange-400 hover:bg-orange-500 text-zinc-950 font-bold py-3.5 rounded-2xl">Pedir Design Agora</a>
+            </div>
+            
+            <div class="bg-gradient-to-br from-yellow-900/40 to-amber-900/40 border border-amber-400 rounded-3xl p-10 text-center">
+                <div class="flex items-center justify-center gap-x-3 mb-6">
+                    <i class="fas fa-graduation-cap text-5xl text-amber-400"></i>
+                </div>
+                <h3 class="text-3xl font-bold mb-4">Mentoria de Importação</h3>
+                <div class="text-6xl font-bold text-amber-400 mb-2">25.000 Kz</div>
+                <div class="text-sm text-zinc-400 mb-4">Alibaba + Shein • 2 Cartões Visa incluídos</div>
+                
+                <a href="https://wa.me/244924122757?text=Olá!%20Quero%20a%20Mentoria%20de%20Importação" class="inline-flex items-center justify-center gap-x-3 bg-amber-400 hover:bg-amber-500 text-zinc-950 font-bold px-10 py-4 rounded-3xl">Inscrever na Mentoria</a>
+            </div>
+            
+        </div>
+    </section>
+    
+    <!-- DEPOIMENTOS -->
+    <section id="depoimentos" class="max-w-6xl mx-auto px-6 py-20 border-t border-zinc-800">
+        <div class="text-center mb-14">
+            <span class="text-amber-400 text-sm font-semibold tracking-[3px]">O QUE OS NOSSOS CLIENTES DIZEM</span>
+            <h2 class="text-5xl font-bold tracking-tight mt-3">Depoimentos reais</h2>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8">
+                <div class="flex items-center gap-x-4 mb-6">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-12 h-12 rounded-full object-cover" alt="">
+                    <div><div class="font-semibold">João Pedro</div><div class="text-xs text-zinc-400">Luanda • Empresário</div></div>
+                </div>
+                <p class="text-zinc-300">"Comprei 4 cartões Visa e tudo correu perfeito. Ativação em menos de 10 minutos. Recomendo muito!"</p>
+                <div class="flex text-amber-400 mt-4">★★★★★</div>
+            </div>
+            
+            <div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8">
+                <div class="flex items-center gap-x-4 mb-6">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-12 h-12 rounded-full object-cover" alt="">
+                    <div><div class="font-semibold">Maria Santos</div><div class="text-xs text-zinc-400">Benguela • Designer</div></div>
+                </div>
+                <p class="text-zinc-300">"Fizeram o meu site em 3 dias. Ficou lindo e já estou a receber encomendas. Obrigada Horizon Digital!"</p>
+                <div class="flex text-amber-400 mt-4">★★★★★</div>
+            </div>
+            
+            <div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8">
+                <div class="flex items-center gap-x-4 mb-6">
+                    <img src="https://randomuser.me/api/portraits/men/45.jpg" class="w-12 h-12 rounded-full object-cover" alt="">
+                    <div><div class="font-semibold">Carlos Mendes</div><div class="text-xs text-zinc-400">Huambo • Gamer</div></div>
+                </div>
+                <p class="text-zinc-300">"Desbloquearam a minha PS4 em menos de 1 hora. Preço justo e suporte excelente. 5 estrelas!"</p>
+                <div class="flex text-amber-400 mt-4">★★★★★</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ -->
+    <section id="faq" class="max-w-4xl mx-auto px-6 py-20 border-t border-zinc-800">
+        <div class="text-center mb-14">
+            <span class="text-amber-400 text-sm font-semibold tracking-[3px]">PERGUNTAS FREQUENTES</span>
+            <h2 class="text-5xl font-bold tracking-tight mt-3">Tens dúvidas?</h2>
+        </div>
+        
+        <div class="space-y-4">
+            <div class="bg-zinc-900 border border-zinc-700 rounded-3xl overflow-hidden">
+                <div onclick="toggleFAQ(this)" class="faq-question flex justify-between items-center p-6">
+                    <span class="font-semibold">Quanto tempo demora a ativação do Cartão Visa?</span>
+                    <i class="fas fa-chevron-down text-amber-400 transition-transform"></i>
+                </div>
+                <div class="faq-answer px-6 pb-6 text-zinc-300">A ativação é feita em menos de 10 minutos após o pagamento.</div>
+            </div>
+            
+            <div class="bg-zinc-900 border border-zinc-700 rounded-3xl overflow-hidden">
+                <div onclick="toggleFAQ(this)" class="faq-question flex justify-between items-center p-6">
+                    <span class="font-semibold">Fazem envio para todo o país?</span>
+                    <i class="fas fa-chevron-down text-amber-400 transition-transform"></i>
+                </div>
+                <div class="faq-answer px-6 pb-6 text-zinc-300">Sim! Enviamos para todas as províncias de Angola via transportadoras confiáveis.</div>
+            </div>
+            
+            <div class="bg-zinc-900 border border-zinc-700 rounded-3xl overflow-hidden">
+                <div onclick="toggleFAQ(this)" class="faq-question flex justify-between items-center p-6">
+                    <span class="font-semibold">Aceitam Multicaixa Express?</span>
+                    <i class="fas fa-chevron-down text-amber-400 transition-transform"></i>
+                </div>
+                <div class="faq-answer px-6 pb-6 text-zinc-300">Sim, aceitamos Multicaixa Express, transferência bancária e pagamento na hora em Luanda.</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA FINAL -->
+    <section class="bg-gradient-to-br from-zinc-900 to-black py-20 border-t border-zinc-800">
+        <div class="max-w-xl mx-auto px-6 text-center">
+            <h2 class="text-5xl font-bold tracking-tight">Pronto para dar o próximo passo?</h2>
+            <p class="mt-6 text-xl text-zinc-300">Fala connosco agora pelo WhatsApp e recebe uma proposta personalizada em minutos.</p>
+            
+            <div class="mt-10">
+                <a href="https://wa.me/244924122757?text=Olá%20Horizon%20Digital!%20Gostaria%20de%20saber%20mais%20sobre%20os%20vossos%20serviços." target="_blank" class="inline-flex items-center justify-center gap-x-3 bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-14 py-5 rounded-3xl text-xl">
+                    <i class="fab fa-whatsapp text-3xl"></i> <span>Conversar no WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="bg-black border-t border-zinc-800 py-14 text-center">
+        <div class="flex justify-center items-center gap-x-3 mb-6">
+            <div class="w-10 h-10 bg-gradient-to-br from-amber-400 to-yellow-500 rounded-2xl flex items-center justify-center">
+                <span class="text-zinc-950 font-bold text-3xl">H</span>
+            </div>
+            <span class="font-bold text-2xl">HORIZON DIGITAL</span>
+        </div>
+        <p class="text-sm text-zinc-400">Luanda, Angola • Soluções digitais de confiança desde 2023.</p>
+        <div class="mt-8 text-xs text-zinc-500">© 2026 Horizon Digital — Todos os direitos reservados</div>
+    </footer>
+    
+    <a href="https://wa.me/244924122757" target="_blank" class="whatsapp-float flex items-center justify-center shadow-xl">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    
+    <script>
+        // Mostrar mais cartões Visa
+        function mostrarMaisCartoes() {
+            const container = document.getElementById('mais-cartoes');
+            if (container.classList.contains('hidden')) {
+                container.classList.remove('hidden');
+                container.classList.add('grid');
+            } else {
+                container.classList.add('hidden');
+                container.classList.remove('grid');
+            }
+        }
+        
+        // Mostrar mais serviços de streaming
+        function mostrarMaisStreaming() {
+            const container = document.getElementById('mais-streaming');
+            if (container.classList.contains('hidden')) {
+                container.classList.remove('hidden');
+                container.classList.add('grid');
+            } else {
+                container.classList.add('hidden');
+                container.classList.remove('grid');
+            }
+        }
+        
+        function animateCounter(id, target, suffix = '') {
+            const el = document.getElementById(id);
+            let current = 0;
+            const increment = Math.ceil(target / 50);
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    el.innerText = target + suffix;
+                    clearInterval(timer);
+                } else {
+                    el.innerText = current + suffix;
+                }
+            }, 40);
+        }
+        
+        function startCounters() {
+            setTimeout(() => {
+                animateCounter('clientes', 1200, '+');
+                animateCounter('satisfacao', 98, '%');
+                animateCounter('servicos', 2450, '+');
+            }, 800);
+        }
+        
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('i');
+            
+            if (answer.style.maxHeight) {
+                answer.style.maxHeight = null;
+                icon.style.transform = 'rotate(0deg)';
+            } else {
+                document.querySelectorAll('.faq-answer').forEach(a => a.style.maxHeight = null);
+                document.querySelectorAll('.faq-question i').forEach(i => i.style.transform = 'rotate(0deg)');
+                
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+                icon.style.transform = 'rotate(180deg)';
+            }
+        }
+        
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        if (mobileBtn) {
+            mobileBtn.addEventListener('click', () => {
+                const menu = document.createElement('div');
+                menu.className = 'fixed inset-0 bg-black/95 z-[100] flex flex-col p-8';
+                menu.innerHTML = `
+                    <div class="flex justify-between items-center mb-12">
+                        <div class="flex items-center gap-x-3">
+                            <div class="w-10 h-10 bg-gradient-to-br from-amber-400 to-yellow-500 rounded-2xl flex items-center justify-center">
+                                <span class="text-zinc-950 font-bold text-3xl">H</span>
+                            </div>
+                            <span class="font-bold text-2xl">HORIZON DIGITAL</span>
+                        </div>
+                        <button class="text-4xl">×</button>
+                    </div>
+                    <div class="flex flex-col gap-y-6 text-2xl font-medium">
+                        <a href="#home">Início</a>
+                        <a href="#servicos">Serviços</a>
+                        <a href="#depoimentos">Depoimentos</a>
+                        <a href="#faq">FAQ</a>
+                    </div>
+                    <div class="mt-auto">
+                        <a href="https://wa.me/244924122757" class="flex items-center justify-center gap-x-3 bg-emerald-500 text-white py-4 rounded-3xl font-bold text-lg">
+                            <i class="fab fa-whatsapp"></i> Abrir WhatsApp
+                        </a>
+                    </div>
+                `;
+                document.body.appendChild(menu);
+                menu.querySelector('button').onclick = () => menu.remove();
+                menu.querySelectorAll('a').forEach(a => a.onclick = () => menu.remove());
+            });
+        }
+        
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+            });
+        });
+        
+        window.onload = function() {
+            startCounters();
+            console.log('%c[Horizon Digital] Site atualizado com sucesso!', 'color:#d4af37');
+        }
+    </script>
+</body>
+</html>
