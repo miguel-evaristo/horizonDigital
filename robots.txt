@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://horizondigital.co.ao/sitemap.xml

@@ -1,552 +1,653 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-AO">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Horizon Digital • Conectando Angola ao Mundo Digital</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        body { font-family: 'Inter', system_ui, sans-serif; }
-        .service-card { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-        .service-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1); }
-        .whatsapp-float { position: fixed; bottom: 25px; right: 25px; background: #25D366; color: white; width: 62px; height: 62px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 15px -3px rgb(37 211 102 / 0.4); z-index: 999; font-size: 30px; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Horizon Digital — Cartões Visa, Importação, Streaming e Marketing Digital em Angola</title>
+<meta name="description" content="A Horizon Digital cria cartões Visa digitais, gere tráfego pago, cria sites profissionais, ensina importação e oferece streaming premium. Fale connosco no WhatsApp.">
+<meta name="keywords" content="cartão visa angola, importação alibaba, mentoria importação, criação de sites angola, tráfego pago, streaming angola, horizon digital">
+<link rel="canonical" href="https://horizondigital.co.ao/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Horizon Digital — Soluções Digitais de Angola para o Mundo">
+<meta property="og:description" content="Cartões Visa, Importação, Tráfego Pago, Criação de Sites, Design Digital e Streaming — tudo num só lugar.">
+<meta property="og:url" content="https://horizondigital.co.ao/">
+<meta property="og:image" content="/assets/og-cover.jpg">
+<meta property="og:locale" content="pt_AO">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Horizon Digital — Soluções Digitais de Angola para o Mundo">
+<meta name="twitter:description" content="Cartões Visa, Importação, Tráfego Pago, Criação de Sites, Design Digital e Streaming.">
+<meta name="twitter:image" content="/assets/og-cover.jpg">
+
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0D3B3A">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link rel="preconnect" href="https://cdn.simpleicons.org">
+<link rel="preload" href="style.css" as="style">
+<link rel="preload" href="main.js" as="script">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Horizon Digital",
+  "url": "https://horizondigital.co.ao/",
+  "email": "horizondigitao@gmail.com",
+  "areaServed": "AO",
+  "sameAs": [],
+  "makesOffer": [
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cartões Visa Digitais" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Streaming" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Tráfego Pago" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Criação de Sites" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Design Digital" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Importação" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mentoria de Importação" } }
+  ]
+}
+</script>
 </head>
-<body class="bg-zinc-950 text-white">
-    
-    <!-- NAVBAR -->
-    <nav class="bg-zinc-900 border-b border-zinc-800 fixed w-full z-50">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex justify-between items-center h-20">
-                <div class="flex items-center gap-x-3">
-                    <div class="w-12 h-12 bg-gradient-to-br from-amber-400 to-yellow-500 rounded-2xl flex items-center justify-center shadow-lg">
-                        <span class="text-zinc-950 font-bold text-4xl">H</span>
-                    </div>
-                    <div>
-                        <span class="font-bold text-3xl tracking-tighter">HORIZON</span>
-                        <span class="font-bold text-3xl tracking-tighter text-amber-400">DIGITAL</span>
-                    </div>
-                </div>
-                
-                <div class="hidden md:flex items-center gap-x-9 text-sm font-medium">
-                    <a href="#home" class="hover:text-amber-400 transition">Início</a>
-                    <a href="#servicos" class="hover:text-amber-400 transition">Serviços</a>
-                    <a href="#depoimentos" class="hover:text-amber-400 transition">Depoimentos</a>
-                    <a href="#faq" class="hover:text-amber-400 transition">FAQ</a>
-                </div>
-                
-                <div class="flex items-center gap-x-4">
-                    <a href="https://wa.me/244924122757" target="_blank" class="hidden md:flex items-center gap-x-2 bg-white text-zinc-950 px-6 py-2.5 rounded-2xl text-sm font-semibold hover:bg-amber-400 transition">
-                        <i class="fab fa-whatsapp"></i> <span>WhatsApp</span>
-                    </a>
-                    <button id="mobile-menu-btn" class="md:hidden w-11 h-11 flex items-center justify-center text-2xl">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </nav>
-    
-    <!-- HERO -->
-    <section id="home" class="pt-20 min-h-screen flex items-center bg-[radial-gradient(#1a2f1a_0.8px,transparent_1px)] bg-[length:4px_4px]">
-        <div class="max-w-5xl mx-auto px-6 pt-12 pb-20 text-center">
-            <div class="max-w-3xl mx-auto">
-                <div class="inline-flex items-center gap-x-2 bg-zinc-900 border border-zinc-700 px-5 py-2 rounded-3xl mb-6 text-lg font-medium text-amber-400">
-                    Saudações Cordiais meus caros clientes
-                </div>
-                
-                <h1 class="text-6xl md:text-7xl font-bold tracking-tighter leading-none mb-6">
-                    Conectando<br>Angola ao<br><span class="text-amber-400">mundo digital</span>
-                </h1>
-                
-                <p class="text-2xl text-zinc-300 max-w-lg mx-auto mb-10">Tudo que precisas para crescer no digital, num só lugar.</p>
-                
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="https://wa.me/244924122757?text=Olá!%20Quero%20saber%20mais%20sobre%20os%20serviços%20da%20Horizon%20Digital" target="_blank" class="flex items-center justify-center gap-x-3 bg-gradient-to-r from-amber-400 to-yellow-500 text-zinc-950 font-bold px-10 py-4 rounded-3xl text-lg">
-                        <i class="fab fa-whatsapp text-2xl"></i> <span>Falar no WhatsApp</span>
-                    </a>
-                    <a href="#servicos" class="flex items-center justify-center gap-x-3 border border-zinc-700 hover:bg-zinc-900 px-8 py-4 rounded-3xl font-semibold">Ver Serviços</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- CONTADORES -->
-    <section class="max-w-6xl mx-auto px-6 py-16 border-t border-zinc-800">
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-8 text-center">
-            <div><div class="text-5xl font-bold text-amber-400" id="clientes">0</div><div class="text-zinc-400 mt-1">Clientes satisfeitos</div></div>
-            <div><div class="text-5xl font-bold text-amber-400" id="satisfacao">0</div><div class="text-zinc-400 mt-1">Taxa de satisfação</div></div>
-            <div><div class="text-5xl font-bold text-amber-400" id="servicos">0</div><div class="text-zinc-400 mt-1">Serviços entregues</div></div>
-        </div>
-    </section>
-    
-    <!-- SERVIÇOS EM DESTAQUE -->
-    <section id="servicos" class="max-w-7xl mx-auto px-6 py-20 border-t border-zinc-800">
-        <div class="text-center mb-14">
-            <span class="text-amber-400 text-sm font-semibold tracking-[3px]">SERVIÇOS PRINCIPAIS</span>
-            <h2 class="text-5xl font-bold tracking-tight mt-3">O que oferecemos</h2>
-        </div>
-        
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div class="service-card bg-zinc-900 border border-amber-400 rounded-3xl p-8">
-                <div class="w-14 h-14 bg-amber-900/50 rounded-2xl flex items-center justify-center mb-6"><i class="fas fa-credit-card text-amber-400 text-3xl"></i></div>
-                <h3 class="text-2xl font-semibold mb-3">Cartões Visa</h3>
-                <p class="text-zinc-400 text-sm mb-4">Pagamentos internacionais rápidos e seguros.</p>
-                <a href="#visa" class="text-amber-400 font-semibold text-sm">Ver planos →</a>
-            </div>
-            
-            <div class="service-card bg-zinc-900 border border-zinc-700 rounded-3xl p-8">
-                <div class="w-14 h-14 bg-violet-900/50 rounded-2xl flex items-center justify-center mb-6"><i class="fas fa-chart-line text-violet-400 text-3xl"></i></div>
-                <h3 class="text-2xl font-semibold mb-3">Tráfego Pago</h3>
-                <p class="text-zinc-400 text-sm mb-4">Aumente suas vendas com anúncios profissionais.</p>
-                <a href="#trafego" class="text-violet-400 font-semibold text-sm">Ver pacotes →</a>
-            </div>
-            
-            <div class="service-card bg-zinc-900 border border-zinc-700 rounded-3xl p-8">
-                <div class="w-14 h-14 bg-blue-900/50 rounded-2xl flex items-center justify-center mb-6"><i class="fas fa-play-circle text-blue-400 text-3xl"></i></div>
-                <h3 class="text-2xl font-semibold mb-3">Streaming</h3>
-                <p class="text-zinc-400 text-sm mb-4">Netflix, Amazon Prime e mais.</p>
-                <a href="#streaming" class="text-blue-400 font-semibold text-sm">Ver planos →</a>
-            </div>
-            
-            <div class="service-card bg-zinc-900 border border-zinc-700 rounded-3xl p-8">
-                <div class="w-14 h-14 bg-orange-900/50 rounded-2xl flex items-center justify-center mb-6"><i class="fas fa-palette text-orange-400 text-3xl"></i></div>
-                <h3 class="text-2xl font-semibold mb-3">Design Digital</h3>
-                <p class="text-zinc-400 text-sm mb-4">Flyers, Currículos e Cartas de Apresentação.</p>
-                <a href="#design" class="text-orange-400 font-semibold text-sm">Ver serviços →</a>
-            </div>
-        </div>
-    </section>
-    
-    <!-- CARTÕES VISA (COM BOTÃO VER MAIS) -->
-    <section id="visa" class="max-w-5xl mx-auto px-6 py-20 border-t border-zinc-800">
-        <div class="bg-zinc-900 border border-amber-400 rounded-3xl p-10 md:p-14">
-            <div class="text-center mb-10">
-                <div class="inline-flex items-center gap-x-3 bg-amber-400 text-zinc-950 px-5 py-1.5 rounded-3xl mb-4">
-                    <i class="fas fa-credit-card"></i>
-                    <span class="font-bold">MAIS PROCURADO</span>
-                </div>
-                <h2 class="text-4xl font-bold">Cartões Visa Internacionais</h2>
-            </div>
-            
-            <!-- 2 Cartões Principais -->
-            <div class="grid md:grid-cols-2 gap-6 mb-8">
-                <div class="bg-zinc-800 border border-amber-400 rounded-3xl p-8">
-                    <div class="mb-6">
-                        <div class="font-bold text-2xl">Pexx</div>
-                        <div class="text-sm text-zinc-400">Ideal para iniciantes</div>
-                        <div class="mt-4"><span class="text-5xl font-bold text-amber-400">4.000</span> <span class="text-lg text-zinc-400">Kz</span></div>
-                    </div>
-                    <ul class="text-sm space-y-2 text-zinc-300 mb-6">
-                        <li class="flex items-center gap-x-2"><i class="fas fa-check text-emerald-400"></i> Ativação em 5 minutos</li>
-                        <li class="flex items-center gap-x-2"><i class="fas fa-check text-emerald-400"></i> Suporte 24/7</li>
-                    </ul>
-                    <a href="https://wa.me/244924122757?text=Olá!%20Quero%20o%20cartão%20Pexx%20de%204.000%20Kz" class="block text-center bg-amber-400 hover:bg-amber-500 text-zinc-950 font-bold py-3.5 rounded-2xl">Comprar por 4.000 Kz</a>
-                </div>
-                
-                <div class="bg-zinc-800 rounded-3xl p-8">
-                    <div class="mb-6">
-                        <div class="font-bold text-2xl">TevauPay</div>
-                        <div class="text-sm text-zinc-400">Mais completo</div>
-                        <div class="mt-4"><span class="text-5xl font-bold text-amber-400">2.000</span> <span class="text-lg text-zinc-400">Kz</span></div>
-                    </div>
-                    <ul class="text-sm space-y-2 text-zinc-300 mb-6">
-                        <li class="flex items-center gap-x-2"><i class="fas fa-check text-emerald-400"></i> Limites mais altos</li>
-                        <li class="flex items-center gap-x-2"><i class="fas fa-check text-emerald-400"></i> Suporte prioritário</li>
-                    </ul>
-                    <a href="https://wa.me/244924122757?text=Olá!%20Quero%20o%20cartão%20TevauPay%20de%202.000%20Kz" class="block text-center border border-amber-400 hover:bg-amber-400 hover:text-zinc-950 font-bold py-3.5 rounded-2xl">Comprar por 2.000 Kz</a>
-                </div>
-            </div>
-            
-            <!-- BOTÃO VER MAIS CARTÕES -->
-            <div class="text-center">
-                <button onclick="mostrarMaisCartoes()" class="inline-flex items-center gap-x-2 border border-amber-400 hover:bg-amber-400 hover:text-zinc-950 text-amber-400 font-semibold px-8 py-3 rounded-2xl transition">
-                    Ver mais cartões Visa <i class="fas fa-chevron-down"></i>
-                </button>
-            </div>
-            
-            <!-- Cartões Adicionais (escondidos) -->
-            <div id="mais-cartoes" class="hidden mt-8 grid md:grid-cols-2 gap-4">
-                <div class="bg-zinc-800 p-6 rounded-3xl">
-                    <div class="flex justify-between items-start">
-                        <div><div class="font-bold">Bybit</div><div class="text-sm text-zinc-400">Virtual</div></div>
-                        <div class="text-right"><div class="text-2xl font-bold text-amber-400">5.000 Kz</div></div>
-                    </div>
-                    <a href="https://wa.me/244924122757?text=Olá!%20Quero%20o%20cartão%20Bybit%20de%205.000%20Kz" class="mt-4 block text-center border border-amber-400 hover:bg-amber-400 hover:text-zinc-950 py-2.5 rounded-2xl text-sm font-semibold">Comprar</a>
-                </div>
-                
-                <div class="bg-zinc-800 p-6 rounded-3xl">
-                    <div class="flex justify-between items-start">
-                        <div><div class="font-bold">RedotPay</div><div class="text-sm text-zinc-400">Virtual</div></div>
-                        <div class="text-right"><div class="text-2xl font-bold text-amber-400">12.000 Kz</div></div>
-                    </div>
-                    <a href="https://wa.me/244924122757?text=Olá!%20Quero%20o%20cartão%20RedotPay%20de%2012.000%20Kz" class="mt-4 block text-center border border-amber-400 hover:bg-amber-400 hover:text-zinc-950 py-2.5 rounded-2xl text-sm font-semibold">Comprar</a>
-                </div>
-                
-                <div class="bg-zinc-800 p-6 rounded-3xl">
-                    <div class="flex justify-between items-start">
-                        <div><div class="font-bold">Jeton</div><div class="text-sm text-zinc-400">Virtual</div></div>
-                        <div class="text-right"><div class="text-2xl font-bold text-amber-400">10.000 Kz</div></div>
-                    </div>
-                    <a href="https://wa.me/244924122757?text=Olá!%20Quero%20o%20cartão%20Jeton%20de%2010.000%20Kz" class="mt-4 block text-center border border-amber-400 hover:bg-amber-400 hover:text-zinc-950 py-2.5 rounded-2xl text-sm font-semibold">Comprar</a>
-                </div>
-                
-                <div class="bg-zinc-800 p-6 rounded-3xl">
-                    <div class="flex justify-between items-start">
-                        <div><div class="font-bold">MyPay</div><div class="text-sm text-zinc-400">Virtual</div></div>
-                        <div class="text-right"><div class="text-2xl font-bold text-amber-400">3.500 Kz</div></div>
-                    </div>
-                    <a href="https://wa.me/244924122757?text=Olá!%20Quero%20o%20cartão%20MyPay%20de%203.500%20Kz" class="mt-4 block text-center border border-amber-400 hover:bg-amber-400 hover:text-zinc-950 py-2.5 rounded-2xl text-sm font-semibold">Comprar</a>
-                </div>
-                
-                <div class="bg-zinc-800 p-6 rounded-3xl md:col-span-2">
-                    <div class="flex justify-between items-start">
-                        <div><div class="font-bold">Cartão Físico Bybit</div><div class="text-sm text-zinc-400">Físico</div></div>
-                        <div class="text-right"><div class="text-2xl font-bold text-amber-400">17.000 Kz</div></div>
-                    </div>
-                    <a href="https://wa.me/244924122757?text=Olá!%20Quero%20o%20Cartão%20Físico%20Bybit%20de%2017.000%20Kz" class="mt-4 block text-center border border-amber-400 hover:bg-amber-400 hover:text-zinc-950 py-2.5 rounded-2xl text-sm font-semibold">Comprar</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- TRÁFEGO PAGO -->
-    <section id="trafego" class="max-w-6xl mx-auto px-6 py-20 border-t border-zinc-800">
-        <div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8 md:p-10">
-            <div class="text-center mb-8">
-                <div class="inline-flex items-center gap-x-3 bg-violet-900/30 px-5 py-1.5 rounded-3xl mb-3">
-                    <i class="fas fa-bullhorn text-violet-400"></i>
-                    <span class="text-violet-400 font-semibold">TRÁFEGO PAGO</span>
-                </div>
-                <h2 class="text-3xl font-bold">Impulsione suas vendas</h2>
-            </div>
-            
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
-                <div class="bg-zinc-800 p-4 rounded-2xl text-center"><div class="text-sm text-zinc-400">2 Dias</div><div class="text-2xl font-bold text-amber-400">3.000 Kz</div></div>
-                <div class="bg-zinc-800 p-4 rounded-2xl text-center"><div class="text-sm text-zinc-400">3 Dias</div><div class="text-2xl font-bold text-amber-400">4.500 Kz</div></div>
-                <div class="bg-zinc-800 p-4 rounded-2xl text-center"><div class="text-sm text-zinc-400">5 Dias</div><div class="text-2xl font-bold text-amber-400">7.500 Kz</div></div>
-                <div class="bg-zinc-800 p-4 rounded-2xl text-center"><div class="text-sm text-zinc-400">10 Dias</div><div class="text-2xl font-bold text-amber-400">15.000 Kz</div></div>
-                <div class="bg-zinc-800 p-4 rounded-2xl text-center"><div class="text-sm text-zinc-400">15 Dias</div><div class="text-2xl font-bold text-amber-400">22.500 Kz</div></div>
-                <div class="bg-zinc-800 p-4 rounded-2xl text-center"><div class="text-sm text-zinc-400">20 Dias</div><div class="text-2xl font-bold text-amber-400">30.000 Kz</div></div>
-                <div class="bg-zinc-800 p-4 rounded-2xl text-center"><div class="text-sm text-zinc-400">30 Dias</div><div class="text-2xl font-bold text-amber-400">45.000 Kz</div></div>
-                <div class="bg-zinc-800 p-4 rounded-2xl text-center"><div class="text-sm text-zinc-400">50 Dias</div><div class="text-2xl font-bold text-amber-400">75.000 Kz</div></div>
-            </div>
-            
-            <div class="text-center mt-8">
-                <a href="https://wa.me/244924122757?text=Olá!%20Quero%20Tráfego%20Pago" class="inline-flex items-center gap-x-3 bg-violet-400 hover:bg-violet-500 text-zinc-950 font-bold px-10 py-4 rounded-3xl text-lg">Quero Impulsionar meu Negócio</a>
-            </div>
-        </div>
-    </section>
-    
-    <!-- STREAMING -->
-    <section id="streaming" class="max-w-5xl mx-auto px-6 py-20 border-t border-zinc-800">
-        <div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-10 md:p-14">
-            <div class="text-center mb-10">
-                <div class="inline-flex items-center gap-x-3 bg-blue-900/30 px-5 py-1.5 rounded-3xl mb-4">
-                    <i class="fas fa-play-circle text-blue-400"></i>
-                    <span class="text-blue-400 font-semibold">STREAMING</span>
-                </div>
-                <h2 class="text-4xl font-bold">Serviços de Streaming</h2>
-            </div>
-            
-            <div class="grid md:grid-cols-2 gap-6">
-                <div class="bg-zinc-800 p-8 rounded-3xl">
-                    <div class="flex items-center gap-x-3 mb-6">
-                        <div class="text-4xl">📺</div>
-                        <div><div class="font-bold text-2xl">Netflix</div></div>
-                    </div>
-                    <div class="grid grid-cols-2 gap-4 text-sm mb-6">
-                        <div class="bg-zinc-700 p-4 rounded-2xl"><div class="font-semibold">Móvel</div><div class="text-xl font-bold text-blue-400">4.500 Kz</div></div>
-                        <div class="bg-zinc-700 p-4 rounded-2xl"><div class="font-semibold">Básico</div><div class="text-xl font-bold text-blue-400">6.000 Kz</div></div>
-                        <div class="bg-zinc-700 p-4 rounded-2xl"><div class="font-semibold">Padrão</div><div class="text-xl font-bold text-blue-400">12.100 Kz</div></div>
-                        <div class="bg-zinc-700 p-4 rounded-2xl"><div class="font-semibold">Premium</div><div class="text-xl font-bold text-blue-400">15.100 Kz</div></div>
-                    </div>
-                    <a href="https://wa.me/244924122757?text=Olá!%20Quero%20Netflix" class="block text-center bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 rounded-2xl">Comprar Netflix</a>
-                </div>
-                
-                <div class="bg-zinc-800 p-8 rounded-3xl">
-                    <div class="flex items-center gap-x-3 mb-6">
-                        <div class="text-4xl">🎬</div>
-                        <div><div class="font-bold text-2xl">Amazon Prime Video</div></div>
-                    </div>
-                    <div class="text-center py-6">
-                        <div class="text-5xl font-bold text-amber-400">12.000 Kz</div>
-                        <div class="text-sm text-zinc-400 mt-1">Conta Premium</div>
-                    </div>
-                    <a href="https://wa.me/244924122757?text=Olá!%20Quero%20Amazon%20Prime" class="block text-center bg-amber-400 hover:bg-amber-500 text-zinc-950 font-bold py-3 rounded-2xl">Comprar Amazon Prime</a>
-                </div>
-            </div>
-            
-            <div class="text-center mt-8">
-                <button onclick="mostrarMaisStreaming()" class="inline-flex items-center gap-x-2 text-blue-400 hover:text-blue-300 font-semibold">
-                    Ver mais serviços (HBO, Disney+, etc) <i class="fas fa-chevron-down"></i>
-                </button>
-            </div>
-            
-            <div id="mais-streaming" class="hidden mt-6 grid md:grid-cols-2 gap-4">
-                <div class="bg-zinc-800 p-6 rounded-3xl flex justify-between items-center">
-                    <div><div class="font-bold">HBO Max</div><div class="text-sm text-zinc-400">Conta Premium</div></div>
-                    <div class="text-right"><div class="text-xl font-bold text-purple-400">14.500 Kz</div></div>
-                </div>
-                <div class="bg-zinc-800 p-6 rounded-3xl flex justify-between items-center">
-                    <div><div class="font-bold">Disney+</div><div class="text-sm text-zinc-400">Conta Premium</div></div>
-                    <div class="text-right"><div class="text-xl font-bold text-purple-400">13.000 Kz</div></div>
-                </div>
-                <div class="bg-zinc-800 p-6 rounded-3xl flex justify-between items-center">
-                    <div><div class="font-bold">YouTube Premium</div><div class="text-sm text-zinc-400">Individual</div></div>
-                    <div class="text-right"><div class="text-xl font-bold text-red-400">6.500 Kz</div></div>
-                </div>
-                <div class="bg-zinc-800 p-6 rounded-3xl flex justify-between items-center">
-                    <div><div class="font-bold">Spotify Premium</div><div class="text-sm text-zinc-400">Individual</div></div>
-                    <div class="text-right"><div class="text-xl font-bold text-green-400">5.500 Kz</div></div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- DESIGN + MENTORIA -->
-    <section class="max-w-7xl mx-auto px-6 py-20 border-t border-zinc-800">
-        <div class="grid lg:grid-cols-2 gap-6">
-            
-            <div id="design" class="bg-zinc-900 border border-zinc-700 rounded-3xl p-10">
-                <div class="flex items-center gap-x-3 mb-8">
-                    <i class="fas fa-palette text-4xl text-orange-400"></i>
-                    <h3 class="text-3xl font-bold">Design Digital</h3>
-                </div>
-                
-                <div class="space-y-4">
-                    <div class="flex justify-between bg-zinc-800 p-4 rounded-2xl"><span class="font-semibold">Flyer Digital</span><span class="font-bold text-amber-400">1.000 Kz</span></div>
-                    <div class="flex justify-between bg-zinc-800 p-4 rounded-2xl"><span class="font-semibold">Currículo (Português)</span><span class="font-bold text-amber-400">1.000 Kz</span></div>
-                    <div class="flex justify-between bg-zinc-800 p-4 rounded-2xl"><span class="font-semibold">Currículo (Inglês)</span><span class="font-bold text-amber-400">2.000 Kz</span></div>
-                    <div class="flex justify-between bg-zinc-800 p-4 rounded-2xl"><span class="font-semibold">Carta de Apresentação</span><span class="font-bold text-amber-400">1.000 Kz</span></div>
-                </div>
-                
-                <a href="https://wa.me/244924122757?text=Olá!%20Quero%20Design%20Digital" class="mt-8 block text-center bg-orange-400 hover:bg-orange-500 text-zinc-950 font-bold py-3.5 rounded-2xl">Pedir Design Agora</a>
-            </div>
-            
-            <div class="bg-gradient-to-br from-yellow-900/40 to-amber-900/40 border border-amber-400 rounded-3xl p-10 text-center">
-                <div class="flex items-center justify-center gap-x-3 mb-6">
-                    <i class="fas fa-graduation-cap text-5xl text-amber-400"></i>
-                </div>
-                <h3 class="text-3xl font-bold mb-4">Mentoria de Importação</h3>
-                <div class="text-6xl font-bold text-amber-400 mb-2">25.000 Kz</div>
-                <div class="text-sm text-zinc-400 mb-4">Alibaba + Shein • 2 Cartões Visa incluídos</div>
-                
-                <a href="https://wa.me/244924122757?text=Olá!%20Quero%20a%20Mentoria%20de%20Importação" class="inline-flex items-center justify-center gap-x-3 bg-amber-400 hover:bg-amber-500 text-zinc-950 font-bold px-10 py-4 rounded-3xl">Inscrever na Mentoria</a>
-            </div>
-            
-        </div>
-    </section>
-    
-    <!-- DEPOIMENTOS -->
-    <section id="depoimentos" class="max-w-6xl mx-auto px-6 py-20 border-t border-zinc-800">
-        <div class="text-center mb-14">
-            <span class="text-amber-400 text-sm font-semibold tracking-[3px]">O QUE OS NOSSOS CLIENTES DIZEM</span>
-            <h2 class="text-5xl font-bold tracking-tight mt-3">Depoimentos reais</h2>
-        </div>
-        
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8">
-                <div class="flex items-center gap-x-4 mb-6">
-                    <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-12 h-12 rounded-full object-cover" alt="">
-                    <div><div class="font-semibold">João Pedro</div><div class="text-xs text-zinc-400">Luanda • Empresário</div></div>
-                </div>
-                <p class="text-zinc-300">"Comprei 4 cartões Visa e tudo correu perfeito. Ativação em menos de 10 minutos. Recomendo muito!"</p>
-                <div class="flex text-amber-400 mt-4">★★★★★</div>
-            </div>
-            
-            <div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8">
-                <div class="flex items-center gap-x-4 mb-6">
-                    <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-12 h-12 rounded-full object-cover" alt="">
-                    <div><div class="font-semibold">Maria Santos</div><div class="text-xs text-zinc-400">Benguela • Designer</div></div>
-                </div>
-                <p class="text-zinc-300">"Fizeram o meu site em 3 dias. Ficou lindo e já estou a receber encomendas. Obrigada Horizon Digital!"</p>
-                <div class="flex text-amber-400 mt-4">★★★★★</div>
-            </div>
-            
-            <div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8">
-                <div class="flex items-center gap-x-4 mb-6">
-                    <img src="https://randomuser.me/api/portraits/men/45.jpg" class="w-12 h-12 rounded-full object-cover" alt="">
-                    <div><div class="font-semibold">Carlos Mendes</div><div class="text-xs text-zinc-400">Huambo • Gamer</div></div>
-                </div>
-                <p class="text-zinc-300">"Desbloquearam a minha PS4 em menos de 1 hora. Preço justo e suporte excelente. 5 estrelas!"</p>
-                <div class="flex text-amber-400 mt-4">★★★★★</div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- FAQ -->
-    <section id="faq" class="max-w-4xl mx-auto px-6 py-20 border-t border-zinc-800">
-        <div class="text-center mb-14">
-            <span class="text-amber-400 text-sm font-semibold tracking-[3px]">PERGUNTAS FREQUENTES</span>
-            <h2 class="text-5xl font-bold tracking-tight mt-3">Tens dúvidas?</h2>
-        </div>
-        
-        <div class="space-y-4">
-            <div class="bg-zinc-900 border border-zinc-700 rounded-3xl overflow-hidden">
-                <div onclick="toggleFAQ(this)" class="faq-question flex justify-between items-center p-6">
-                    <span class="font-semibold">Quanto tempo demora a ativação do Cartão Visa?</span>
-                    <i class="fas fa-chevron-down text-amber-400 transition-transform"></i>
-                </div>
-                <div class="faq-answer px-6 pb-6 text-zinc-300">A ativação é feita em menos de 10 minutos após o pagamento.</div>
-            </div>
-            
-            <div class="bg-zinc-900 border border-zinc-700 rounded-3xl overflow-hidden">
-                <div onclick="toggleFAQ(this)" class="faq-question flex justify-between items-center p-6">
-                    <span class="font-semibold">Fazem envio para todo o país?</span>
-                    <i class="fas fa-chevron-down text-amber-400 transition-transform"></i>
-                </div>
-                <div class="faq-answer px-6 pb-6 text-zinc-300">Sim! Enviamos para todas as províncias de Angola via transportadoras confiáveis.</div>
-            </div>
-            
-            <div class="bg-zinc-900 border border-zinc-700 rounded-3xl overflow-hidden">
-                <div onclick="toggleFAQ(this)" class="faq-question flex justify-between items-center p-6">
-                    <span class="font-semibold">Aceitam Multicaixa Express?</span>
-                    <i class="fas fa-chevron-down text-amber-400 transition-transform"></i>
-                </div>
-                <div class="faq-answer px-6 pb-6 text-zinc-300">Sim, aceitamos Multicaixa Express, transferência bancária e pagamento na hora em Luanda.</div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- CTA FINAL -->
-    <section class="bg-gradient-to-br from-zinc-900 to-black py-20 border-t border-zinc-800">
-        <div class="max-w-xl mx-auto px-6 text-center">
-            <h2 class="text-5xl font-bold tracking-tight">Pronto para dar o próximo passo?</h2>
-            <p class="mt-6 text-xl text-zinc-300">Fala connosco agora pelo WhatsApp e recebe uma proposta personalizada em minutos.</p>
-            
-            <div class="mt-10">
-                <a href="https://wa.me/244924122757?text=Olá%20Horizon%20Digital!%20Gostaria%20de%20saber%20mais%20sobre%20os%20vossos%20serviços." target="_blank" class="inline-flex items-center justify-center gap-x-3 bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-14 py-5 rounded-3xl text-xl">
-                    <i class="fab fa-whatsapp text-3xl"></i> <span>Conversar no WhatsApp</span>
-                </a>
-            </div>
-        </div>
-    </section>
-    
-    <footer class="bg-black border-t border-zinc-800 py-14 text-center">
-        <div class="flex justify-center items-center gap-x-3 mb-6">
-            <div class="w-10 h-10 bg-gradient-to-br from-amber-400 to-yellow-500 rounded-2xl flex items-center justify-center">
-                <span class="text-zinc-950 font-bold text-3xl">H</span>
-            </div>
-            <span class="font-bold text-2xl">HORIZON DIGITAL</span>
-        </div>
-        <p class="text-sm text-zinc-400">Luanda, Angola • Soluções digitais de confiança desde 2023.</p>
-        <div class="mt-8 text-xs text-zinc-500">© 2026 Horizon Digital — Todos os direitos reservados</div>
-    </footer>
-    
-    <a href="https://wa.me/244924122757" target="_blank" class="whatsapp-float flex items-center justify-center shadow-xl">
-        <i class="fab fa-whatsapp"></i>
+<body>
+
+<!-- ============ SKIP LINK (acessibilidade) ============ -->
+<a class="skip-link" href="#conteudo-principal">Saltar para o conteúdo</a>
+
+<!-- ============ CABEÇALHO ============ -->
+<header class="site-header" id="topo">
+  <div class="header-inner">
+    <a href="#topo" class="logo" aria-label="Horizon Digital — Início">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40" width="34" height="34">
+          <polygon points="20,3 36,12 36,28 20,37 4,28 4,12" fill="none" stroke="currentColor" stroke-width="2"/>
+          <circle cx="20" cy="20" r="6" fill="currentColor"/>
+        </svg>
+      </span>
+      <span class="logo-text">Horizon<em>Digital</em></span>
     </a>
-    
-    <script>
-        // Mostrar mais cartões Visa
-        function mostrarMaisCartoes() {
-            const container = document.getElementById('mais-cartoes');
-            if (container.classList.contains('hidden')) {
-                container.classList.remove('hidden');
-                container.classList.add('grid');
-            } else {
-                container.classList.add('hidden');
-                container.classList.remove('grid');
-            }
-        }
-        
-        // Mostrar mais serviços de streaming
-        function mostrarMaisStreaming() {
-            const container = document.getElementById('mais-streaming');
-            if (container.classList.contains('hidden')) {
-                container.classList.remove('hidden');
-                container.classList.add('grid');
-            } else {
-                container.classList.add('hidden');
-                container.classList.remove('grid');
-            }
-        }
-        
-        function animateCounter(id, target, suffix = '') {
-            const el = document.getElementById(id);
-            let current = 0;
-            const increment = Math.ceil(target / 50);
-            const timer = setInterval(() => {
-                current += increment;
-                if (current >= target) {
-                    el.innerText = target + suffix;
-                    clearInterval(timer);
-                } else {
-                    el.innerText = current + suffix;
-                }
-            }, 40);
-        }
-        
-        function startCounters() {
-            setTimeout(() => {
-                animateCounter('clientes', 1200, '+');
-                animateCounter('satisfacao', 98, '%');
-                animateCounter('servicos', 2450, '+');
-            }, 800);
-        }
-        
-        function toggleFAQ(element) {
-            const answer = element.nextElementSibling;
-            const icon = element.querySelector('i');
-            
-            if (answer.style.maxHeight) {
-                answer.style.maxHeight = null;
-                icon.style.transform = 'rotate(0deg)';
-            } else {
-                document.querySelectorAll('.faq-answer').forEach(a => a.style.maxHeight = null);
-                document.querySelectorAll('.faq-question i').forEach(i => i.style.transform = 'rotate(0deg)');
-                
-                answer.style.maxHeight = answer.scrollHeight + 'px';
-                icon.style.transform = 'rotate(180deg)';
-            }
-        }
-        
-        const mobileBtn = document.getElementById('mobile-menu-btn');
-        if (mobileBtn) {
-            mobileBtn.addEventListener('click', () => {
-                const menu = document.createElement('div');
-                menu.className = 'fixed inset-0 bg-black/95 z-[100] flex flex-col p-8';
-                menu.innerHTML = `
-                    <div class="flex justify-between items-center mb-12">
-                        <div class="flex items-center gap-x-3">
-                            <div class="w-10 h-10 bg-gradient-to-br from-amber-400 to-yellow-500 rounded-2xl flex items-center justify-center">
-                                <span class="text-zinc-950 font-bold text-3xl">H</span>
-                            </div>
-                            <span class="font-bold text-2xl">HORIZON DIGITAL</span>
-                        </div>
-                        <button class="text-4xl">×</button>
-                    </div>
-                    <div class="flex flex-col gap-y-6 text-2xl font-medium">
-                        <a href="#home">Início</a>
-                        <a href="#servicos">Serviços</a>
-                        <a href="#depoimentos">Depoimentos</a>
-                        <a href="#faq">FAQ</a>
-                    </div>
-                    <div class="mt-auto">
-                        <a href="https://wa.me/244924122757" class="flex items-center justify-center gap-x-3 bg-emerald-500 text-white py-4 rounded-3xl font-bold text-lg">
-                            <i class="fab fa-whatsapp"></i> Abrir WhatsApp
-                        </a>
-                    </div>
-                `;
-                document.body.appendChild(menu);
-                menu.querySelector('button').onclick = () => menu.remove();
-                menu.querySelectorAll('a').forEach(a => a.onclick = () => menu.remove());
-            });
-        }
-        
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
-            });
-        });
-        
-        window.onload = function() {
-            startCounters();
-            console.log('%c[Horizon Digital] Site atualizado com sucesso!', 'color:#d4af37');
-        }
-    </script>
+
+    <nav class="main-nav" id="main-nav" aria-label="Navegação principal">
+      <a href="#servicos">Serviços</a>
+      <a href="#mentoria">Mentoria</a>
+      <a href="#marcas">Marcas</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Alternar modo claro/escuro">
+        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
+        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+      <a class="btn btn-ghost btn-sm" href="https://wa.me/244924122757" target="_blank" rel="noopener">Falar no WhatsApp</a>
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="conteudo-principal">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" aria-label="Introdução">
+    <canvas id="hero-canvas" aria-hidden="true"></canvas>
+    <div class="hero-inner">
+      <div class="hero-badge reveal">Angola → Mundo · Plataforma Digital</div>
+      <h1 class="hero-title" id="hero-title" aria-label="Transformamos ideias em soluções digitais.">
+        <!-- letras injetadas via JS para animação; texto acessível no aria-label acima -->
+      </h1>
+      <p class="hero-subtitle reveal">Cartões Visa, Importação, Marketing Digital, Criação de Sites, Design Digital e muito mais — tudo num único lugar de confiança.</p>
+
+      <div class="hero-actions reveal">
+        <a class="btn btn-primary" href="https://wa.me/244924122757" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-1.9-.9-.3-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.1.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.5-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.6-1.5-.8-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.3.2-.6.2-1.1.2-1.3-.1-.1-.3-.2-.6-.3z"/><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
+          Falar no WhatsApp
+        </a>
+        <a class="btn btn-outline" href="#servicos">Ver Serviços</a>
+      </div>
+
+      <form class="hero-search reveal" id="search-form" role="search" aria-label="Pesquisar serviços">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="search-input" placeholder="Pesquisar: Visa, Netflix, Importação, Site, Design..." aria-label="Pesquisar serviços">
+        <div id="search-results" class="search-results" hidden></div>
+      </form>
+      <div class="search-filters reveal" id="search-filters" role="group" aria-label="Filtrar por categoria">
+        <button class="filter-chip is-active" data-filter="todos">Todos</button>
+        <button class="filter-chip" data-filter="visa">Cartões Visa</button>
+        <button class="filter-chip" data-filter="streaming">Streaming</button>
+        <button class="filter-chip" data-filter="trafego">Tráfego Pago</button>
+        <button class="filter-chip" data-filter="sites">Sites</button>
+        <button class="filter-chip" data-filter="design">Design</button>
+        <button class="filter-chip" data-filter="importacao">Importação</button>
+        <button class="filter-chip" data-filter="mentoria">Mentoria</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GALERIA DE CONFIANÇA / CONTADORES ============ -->
+  <section class="stats" aria-label="Números da Horizon Digital">
+    <div class="stats-inner">
+      <div class="stat">
+        <span class="stat-number" data-count="500" data-suffix="+">0</span>
+        <span class="stat-label">Clientes Atendidos</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number" data-count="1000" data-suffix="+">0</span>
+        <span class="stat-label">Serviços Prestados</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number" data-count="300" data-suffix="+">0</span>
+        <span class="stat-label">Cartões Criados</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number" data-count="300" data-suffix="+">0</span>
+        <span class="stat-label">Projetos Concluídos</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="gold-trace" aria-hidden="true"></div>
+
+  <!-- ============ SERVIÇOS ============ -->
+  <section class="section" id="servicos" aria-label="Serviços">
+    <div class="section-head reveal">
+      <span class="eyebrow">O que fazemos</span>
+      <h2>Soluções digitais completas, num só lugar</h2>
+      <p>Seis áreas de atuação, cada uma pensada para resolver um problema real do teu dia a dia digital.</p>
+    </div>
+
+    <!-- Cartões Visa -->
+    <article class="service-block reveal" id="cartoes-visa" data-service="visa" data-particle="visa">
+      <div class="service-block-head">
+        <h3><svg class="h3-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg> Cartões Visa Digitais</h3>
+        <p>Cartões virtuais e físicos prontos para compras internacionais, subscrições e pagamentos online — criados em pouco tempo, com acompanhamento direto pelo WhatsApp.</p>
+        <div class="card-logo-row">
+          <img src="https://cdn.simpleicons.org/visa" alt="Visa" loading="lazy" onerror="this.remove()">
+        </div>
+      </div>
+      <div class="card-grid">
+        <div class="price-card">
+          <img class="card-logo" src="assets/logos/pexx.webp" alt="Pexx" width="120" height="73" loading="lazy" decoding="async">
+          <h4>Pexx</h4>
+          <p class="price">4.000 Kz</p>
+          <a class="btn btn-gold btn-sm" href="https://wa.me/244924122757?text=Ol%C3%A1%2C%20quero%20criar%20um%20cart%C3%A3o%20Pexx" target="_blank" rel="noopener">Solicitar pelo WhatsApp</a>
+        </div>
+        <div class="price-card">
+          <img class="card-logo" src="assets/logos/bybit-cartao.webp" alt="Cartão Bybit" width="120" height="120" loading="lazy" decoding="async">
+          <h4>Bybit Digital</h4>
+          <p class="price">5.000 Kz</p>
+          <a class="btn btn-gold btn-sm" href="https://wa.me/244924122757?text=Ol%C3%A1%2C%20quero%20criar%20um%20cart%C3%A3o%20Bybit%20Digital" target="_blank" rel="noopener">Solicitar pelo WhatsApp</a>
+        </div>
+        <div class="price-card">
+          <img class="card-logo" src="assets/logos/jeton.webp" alt="Jeton" width="120" height="120" loading="lazy" decoding="async">
+          <h4>Jeton</h4>
+          <p class="price">10.000 Kz</p>
+          <a class="btn btn-gold btn-sm" href="https://wa.me/244924122757?text=Ol%C3%A1%2C%20quero%20criar%20um%20cart%C3%A3o%20Jeton" target="_blank" rel="noopener">Solicitar pelo WhatsApp</a>
+        </div>
+        <div class="price-card">
+          <img class="card-logo" src="assets/logos/redotpay.webp" alt="RedotPay" width="120" height="120" loading="lazy" decoding="async">
+          <h4>RedotPay</h4>
+          <p class="price">12.000 Kz</p>
+          <a class="btn btn-gold btn-sm" href="https://wa.me/244924122757?text=Ol%C3%A1%2C%20quero%20criar%20um%20cart%C3%A3o%20RedotPay" target="_blank" rel="noopener">Solicitar pelo WhatsApp</a>
+        </div>
+        <div class="price-card">
+          <img class="card-logo" src="assets/logos/bybit-cartao.webp" alt="Cartão Bybit" width="120" height="120" loading="lazy" decoding="async">
+          <h4>Bybit Físico</h4>
+          <p class="price">17.000 Kz</p>
+          <a class="btn btn-gold btn-sm" href="https://wa.me/244924122757?text=Ol%C3%A1%2C%20quero%20criar%20um%20cart%C3%A3o%20Bybit%20F%C3%ADsico" target="_blank" rel="noopener">Solicitar pelo WhatsApp</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Streaming -->
+    <article class="service-block reveal" id="streaming" data-service="streaming">
+      <div class="service-block-head">
+        <h3><svg class="h3-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg> Serviços de Streaming</h3>
+        <p>Contas premium das principais plataformas do mundo, com ativação rápida e suporte contínuo.</p>
+      </div>
+      <div class="card-grid card-grid--wide">
+        <div class="price-card">
+          <img class="card-logo" src="assets/logos/netflix.webp" alt="Netflix" width="120" height="62" loading="lazy" decoding="async">
+          <h4>Netflix — Móvel</h4>
+          <p class="price">4.500 Kz</p>
+          <a class="btn btn-gold btn-sm" href="https://wa.me/244924122757?text=Ol%C3%A1%2C%20quero%20o%20plano%20Netflix%20M%C3%B3vel" target="_blank" rel="noopener">Solicitar</a>
+        </div>
+        <div class="price-card">
+          <img class="card-logo" src="assets/logos/netflix.webp" alt="Netflix" width="120" height="62" loading="lazy" decoding="async">
+          <h4>Netflix — Básico</h4>
+          <p class="price">6.000 Kz</p>
+          <a class="btn btn-gold btn-sm" href="https://wa.me/244924122757?text=Ol%C3%A1%2C%20quero%20o%20plano%20Netflix%20B%C3%A1sico" target="_blank" rel="noopener">Solicitar</a>
+        </div>
+        <div class="price-card">
+          <img class="card-logo" src="assets/logos/netflix.webp" alt="Netflix" width="120" height="62" loading="lazy" decoding="async">
+          <h4>Netflix — Padrão</h4>
+          <p class="price">12.100 Kz</p>
+          <a class="btn btn-gold btn-sm" href="https://wa.me/244924122757?text=Ol%C3%A1%2C%20quero%20o%20plano%20Netflix%20Padr%C3%A3o" target="_blank" rel="noopener">Solicitar</a>
+        </div>
+        <div class="price-card">
+          <img class="card-logo" src="assets/logos/netflix.webp" alt="Netflix" width="120" height="62" loading="lazy" decoding="async">
+          <h4>Netflix — Premium</h4>
+          <p class="price">15.100 Kz</p>
+          <a class="btn btn-gold btn-sm" href="https://wa.me/244924122757?text=Ol%C3%A1%2C%20quero%20o%20plano%20Netflix%20Premium" target="_blank" rel="noopener">Solicitar</a>
+        </div>
+        <div class="price-card">
+          <img class="card-logo" src="https://cdn.simpleicons.org/primevideo" alt="" loading="lazy" onerror="this.remove()">
+          <h4>Amazon Prime Video</h4>
+          <p class="price">12.000 Kz</p>
+          <a class="btn btn-gold btn-sm" href="https://wa.me/244924122757?text=Ol%C3%A1%2C%20quero%20uma%20conta%20Amazon%20Prime%20Video" target="_blank" rel="noopener">Solicitar</a>
+        </div>
+        <div class="price-card">
+          <img class="card-logo" src="assets/logos/hbomax.webp" alt="HBO Max" width="120" height="63" loading="lazy" decoding="async">
+          <h4>HBO Max</h4>
+          <p class="price">14.500 Kz</p>
+          <a class="btn btn-gold btn-sm" href="https://wa.me/244924122757?text=Ol%C3%A1%2C%20quero%20uma%20conta%20HBO%20Max" target="_blank" rel="noopener">Solicitar</a>
+        </div>
+        <div class="price-card">
+          <img class="card-logo" src="assets/logos/disneyplus.webp" alt="Disney+" width="120" height="107" loading="lazy" decoding="async">
+          <h4>Disney+</h4>
+          <p class="price">13.000 Kz</p>
+          <a class="btn btn-gold btn-sm" href="https://wa.me/244924122757?text=Ol%C3%A1%2C%20quero%20uma%20conta%20Disney%2B" target="_blank" rel="noopener">Solicitar</a>
+        </div>
+        <div class="price-card">
+          <img class="card-logo" src="assets/logos/youtube-premium.webp" alt="YouTube Premium" width="120" height="67" loading="lazy" decoding="async">
+          <h4>YouTube Premium</h4>
+          <p class="price">6.500 Kz</p>
+          <a class="btn btn-gold btn-sm" href="https://wa.me/244924122757?text=Ol%C3%A1%2C%20quero%20YouTube%20Premium" target="_blank" rel="noopener">Solicitar</a>
+        </div>
+        <div class="price-card">
+          <img class="card-logo" src="assets/logos/spotify.webp" alt="Spotify" width="120" height="120" loading="lazy" decoding="async">
+          <h4>Spotify Premium</h4>
+          <p class="price">5.500 Kz</p>
+          <a class="btn btn-gold btn-sm" href="https://wa.me/244924122757?text=Ol%C3%A1%2C%20quero%20Spotify%20Premium" target="_blank" rel="noopener">Solicitar</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Tráfego Pago -->
+    <article class="service-block reveal" id="trafego-pago" data-service="trafego" data-particle="trafego">
+      <div class="service-block-head">
+        <h3><svg class="h3-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg> Tráfego Pago</h3>
+        <p>Criação e gestão de campanhas publicitárias para aumentar vendas, alcance e captação de clientes.</p>
+        <div class="card-logo-row">
+          <img src="assets/logos/googleads.webp" alt="Google Ads" width="24" height="24" loading="lazy" decoding="async">
+          <img src="assets/logos/meta.webp" alt="Meta" width="24" height="24" loading="lazy" decoding="async">
+          <img src="assets/logos/facebook.webp" alt="Facebook Ads" width="24" height="24" loading="lazy" decoding="async">
+          <img src="assets/logos/instagram-ads.webp" alt="Instagram Ads" width="24" height="24" loading="lazy" decoding="async">
+          <img src="assets/logos/tiktok-ads.webp" alt="TikTok Ads" width="24" height="24" loading="lazy" decoding="async">
+        </div>
+      </div>
+      <div class="card-grid card-grid--wide">
+        <div class="price-card"><h4>2 Dias</h4><p class="price">3.000 Kz</p><a class="btn btn-gold btn-sm" href="https://wa.me/244924122757?text=Ol%C3%A1%2C%20quero%20o%20pacote%20de%20Tr%C3%A1fego%20Pago%20de%202%20dias" target="_blank" rel="noopener">Contratar</a></div>
+        <div class="price-card"><h4>3 Dias</h4><p class="price">4.500 Kz</p><a class="btn btn-gold btn-sm" href="https://wa.me/244924122757?text=Ol%C3%A1%2C%20quero%20o%20pacote%20de%20Tr%C3%A1fego%20Pago%20de%203%20dias" target="_blank" rel="noopener">Contratar</a></div>
+        <div class="price-card"><h4>5 Dias</h4><p class="price">7.500 Kz</p><a class="btn btn-gold btn-sm" href="https://wa.me/244924122757?text=Ol%C3%A1%2C%20quero%20o%20pacote%20de%20Tr%C3%A1fego%20Pago%20de%205%20dias" target="_blank" rel="noopener">Contratar</a></div>
+        <div class="price-card"><h4>10 Dias</h4><p class="price">15.000 Kz</p><a class="btn btn-gold btn-sm" href="https://wa.me/244924122757?text=Ol%C3%A1%2C%20quero%20o%20pacote%20de%20Tr%C3%A1fego%20Pago%20de%2010%20dias" target="_blank" rel="noopener">Contratar</a></div>
+        <div class="price-card"><h4>15 Dias</h4><p class="price">22.500 Kz</p><a class="btn btn-gold btn-sm" href="https://wa.me/244924122757?text=Ol%C3%A1%2C%20quero%20o%20pacote%20de%20Tr%C3%A1fego%20Pago%20de%2015%20dias" target="_blank" rel="noopener">Contratar</a></div>
+        <div class="price-card"><h4>20 Dias</h4><p class="price">30.000 Kz</p><a class="btn btn-gold btn-sm" href="https://wa.me/244924122757?text=Ol%C3%A1%2C%20quero%20o%20pacote%20de%20Tr%C3%A1fego%20Pago%20de%2020%20dias" target="_blank" rel="noopener">Contratar</a></div>
+        <div class="price-card"><h4>30 Dias</h4><p class="price">45.000 Kz</p><a class="btn btn-gold btn-sm" href="https://wa.me/244924122757?text=Ol%C3%A1%2C%20quero%20o%20pacote%20de%20Tr%C3%A1fego%20Pago%20de%2030%20dias" target="_blank" rel="noopener">Contratar</a></div>
+        <div class="price-card"><h4>50 Dias</h4><p class="price">75.000 Kz</p><a class="btn btn-gold btn-sm" href="https://wa.me/244924122757?text=Ol%C3%A1%2C%20quero%20o%20pacote%20de%20Tr%C3%A1fego%20Pago%20de%2050%20dias" target="_blank" rel="noopener">Contratar</a></div>
+      </div>
+    </article>
+
+    <!-- Criação de Sites -->
+    <article class="service-block reveal" id="criacao-sites" data-service="sites" data-particle="sites">
+      <div class="service-block-head">
+        <h3><svg class="h3-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> Criação de Sites</h3>
+        <p>Sites estáticos profissionais, rápidos e seguros — com hospedagem, domínio, SEO e integração com WhatsApp incluídos.</p>
+      </div>
+      <div class="card-grid card-grid--wide">
+        <div class="price-card">
+          <h4>Landing Page</h4>
+          <p class="price">180.000 Kz</p>
+          <ul class="feature-list">
+            <li>Design responsivo</li>
+            <li>Hospedagem incluída</li>
+            <li>SEO básico</li>
+          </ul>
+          <a class="btn btn-gold btn-sm" href="https://wa.me/244924122757?text=Ol%C3%A1%2C%20quero%20uma%20Landing%20Page" target="_blank" rel="noopener">Solicitar Orçamento</a>
+        </div>
+        <div class="price-card">
+          <h4>Site até 3 páginas</h4>
+          <p class="price">300.000 Kz</p>
+          <ul class="feature-list">
+            <li>Design responsivo</li>
+            <li>Hospedagem e domínio</li>
+            <li>Integração WhatsApp</li>
+          </ul>
+          <a class="btn btn-gold btn-sm" href="https://wa.me/244924122757?text=Ol%C3%A1%2C%20quero%20um%20site%20at%C3%A9%203%20p%C3%A1ginas" target="_blank" rel="noopener">Solicitar Orçamento</a>
+        </div>
+        <div class="price-card">
+          <h4>Site até 5 páginas</h4>
+          <p class="price">450.000 Kz</p>
+          <ul class="feature-list">
+            <li>Alta velocidade de carregamento</li>
+            <li>SEO avançado</li>
+            <li>Segurança reforçada</li>
+          </ul>
+          <a class="btn btn-gold btn-sm" href="https://wa.me/244924122757?text=Ol%C3%A1%2C%20quero%20um%20site%20at%C3%A9%205%20p%C3%A1ginas" target="_blank" rel="noopener">Solicitar Orçamento</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Design Digital -->
+    <article class="service-block reveal" id="design-digital" data-service="design" data-particle="design">
+      <div class="service-block-head">
+        <h3><svg class="h3-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg> Design Digital</h3>
+        <p>Artes profissionais para reforçar a tua imagem pessoal ou de marca.</p>
+      </div>
+      <div class="card-grid card-grid--wide">
+        <div class="price-card"><h4>Flyer Digital</h4><p class="price">1.000 Kz</p><a class="btn btn-gold btn-sm" href="https://wa.me/244924122757?text=Ol%C3%A1%2C%20quero%20um%20Flyer%20Digital" target="_blank" rel="noopener">Solicitar Orçamento</a></div>
+        <div class="price-card"><h4>Currículo (Português)</h4><p class="price">1.000 Kz</p><a class="btn btn-gold btn-sm" href="https://wa.me/244924122757?text=Ol%C3%A1%2C%20quero%20um%20Curr%C3%ADculo%20em%20Portugu%C3%AAs" target="_blank" rel="noopener">Solicitar Orçamento</a></div>
+        <div class="price-card"><h4>Currículo (Inglês)</h4><p class="price">2.000 Kz</p><a class="btn btn-gold btn-sm" href="https://wa.me/244924122757?text=Ol%C3%A1%2C%20quero%20um%20Curr%C3%ADculo%20em%20Ingl%C3%AAs" target="_blank" rel="noopener">Solicitar Orçamento</a></div>
+        <div class="price-card"><h4>Carta de Apresentação</h4><p class="price">1.000 Kz</p><a class="btn btn-gold btn-sm" href="https://wa.me/244924122757?text=Ol%C3%A1%2C%20quero%20uma%20Carta%20de%20Apresenta%C3%A7%C3%A3o" target="_blank" rel="noopener">Solicitar Orçamento</a></div>
+      </div>
+    </article>
+
+    <!-- Importação -->
+    <article class="service-block reveal" id="importacao" data-service="importacao" data-particle="importacao">
+      <div class="service-block-head">
+        <h3><svg class="h3-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 8l-9-5-9 5v8l9 5 9-5V8z"/><path d="M3.5 8.5l8.5 5 8.5-5"/><line x1="12" y1="22" x2="12" y2="13.5"/></svg> Importação</h3>
+        <p>Acesso facilitado às maiores plataformas de compra do mundo, com apoio em todo o processo.</p>
+      </div>
+      <div class="card-grid card-grid--wide">
+        <div class="price-card price-card--brand"><img class="card-logo" src="assets/logos/alibaba.webp" alt="Alibaba" width="120" height="120" loading="lazy" decoding="async">
+          <h4>Alibaba</h4><p class="muted">Fornecedores diretos de fábrica</p><a class="btn btn-outline btn-sm" href="https://wa.me/244924122757?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20importa%C3%A7%C3%A3o%20via%20Alibaba" target="_blank" rel="noopener">Saber Mais</a></div>
+        <div class="price-card price-card--brand"><img class="card-logo" src="assets/logos/aliexpress.webp" alt="AliExpress" width="120" height="120" loading="lazy" decoding="async">
+          <h4>AliExpress</h4><p class="muted">Compras variadas, entrega global</p><a class="btn btn-outline btn-sm" href="https://wa.me/244924122757?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20importa%C3%A7%C3%A3o%20via%20AliExpress" target="_blank" rel="noopener">Saber Mais</a></div>
+        <div class="price-card price-card--brand"><img class="card-logo" src="assets/logos/shein.webp" alt="SHEIN" width="120" height="120" loading="lazy" decoding="async">
+          <h4>SHEIN</h4><p class="muted">Moda e acessórios</p><a class="btn btn-outline btn-sm" href="https://wa.me/244924122757?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20importa%C3%A7%C3%A3o%20via%20SHEIN" target="_blank" rel="noopener">Saber Mais</a></div>
+        <div class="price-card price-card--brand"><img class="card-logo" src="https://cdn.simpleicons.org/temu" alt="" loading="lazy" onerror="this.remove()">
+          <h4>Temu</h4><p class="muted">Preços acessíveis</p><a class="btn btn-outline btn-sm" href="https://wa.me/244924122757?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20importa%C3%A7%C3%A3o%20via%20Temu" target="_blank" rel="noopener">Saber Mais</a></div>
+        <div class="price-card price-card--brand"><img class="card-logo" src="assets/logos/ebay.webp" alt="eBay" width="120" height="120" loading="lazy" decoding="async">
+          <h4>eBay</h4><p class="muted">Leilões e produtos usados/novos</p><a class="btn btn-outline btn-sm" href="https://wa.me/244924122757?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20importa%C3%A7%C3%A3o%20via%20eBay" target="_blank" rel="noopener">Saber Mais</a></div>
+        <div class="price-card price-card--brand"><img class="card-logo" src="assets/logos/vinted.webp" alt="Vinted" width="120" height="120" loading="lazy" decoding="async">
+          <h4>Vinted</h4><p class="muted">Moda em segunda mão, Europa</p><a class="btn btn-outline btn-sm" href="https://wa.me/244924122757?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20importa%C3%A7%C3%A3o%20via%20Vinted" target="_blank" rel="noopener">Saber Mais</a></div>
+        <div class="price-card price-card--brand"><img class="card-logo" src="assets/logos/1688.webp" alt="1688" width="120" height="120" loading="lazy" decoding="async"><h4>1688</h4><p class="muted">Compra direta de fábrica (China)</p><a class="btn btn-outline btn-sm" href="https://wa.me/244924122757?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20importa%C3%A7%C3%A3o%20via%201688" target="_blank" rel="noopener">Saber Mais</a></div>
+      </div>
+    </article>
+  </section>
+
+  <div class="gold-trace" aria-hidden="true"></div>
+
+  <!-- ============ MENTORIA DE IMPORTAÇÃO ============ -->
+  <section class="section section--dark" id="mentoria" aria-label="Mentoria de Importação">
+    <div class="section-head reveal">
+      <span class="eyebrow">Área Premium</span>
+      <h2>Aprenda a importar e criar o seu negócio online.</h2>
+      <p>Quatro níveis progressivos, do primeiro pedido internacional à negociação direta com fábricas.</p>
+    </div>
+
+    <div class="mentoria-grid">
+      <div class="mentoria-card reveal" data-level="1">
+        <span class="mentoria-badge mentoria-badge--1">Nível 1</span>
+        <h3>China Básico</h3>
+        <p class="price">10.000 Kz</p>
+        <ul class="feature-list">
+          <li>AliExpress</li>
+          <li>SHEIN</li>
+          <li>1 Cartão Visa Digital</li>
+          <li>Lista de fornecedores de dólar</li>
+        </ul>
+        <a class="btn btn-outline btn-sm" href="https://wa.me/244924122757?text=Ol%C3%A1%2C%20quero%20a%20Mentoria%20N%C3%ADvel%201%20-%20China%20B%C3%A1sico" target="_blank" rel="noopener">Solicitar Mentoria</a>
+      </div>
+
+      <div class="mentoria-card reveal" data-level="2">
+        <span class="mentoria-badge mentoria-badge--2">Nível 2</span>
+        <h3>China + Estados Unidos</h3>
+        <p class="price">15.000 Kz</p>
+        <ul class="feature-list">
+          <li>Alibaba</li>
+          <li>eBay</li>
+          <li>2 Cartões Visa Digitais</li>
+          <li>Fornecedores de dólar/euro</li>
+          <li>Agentes de envio</li>
+          <li>Redirecionadoras internacionais</li>
+        </ul>
+        <a class="btn btn-outline btn-sm" href="https://wa.me/244924122757?text=Ol%C3%A1%2C%20quero%20a%20Mentoria%20N%C3%ADvel%202%20-%20China%20%2B%20EUA" target="_blank" rel="noopener">Solicitar Mentoria</a>
+      </div>
+
+      <div class="mentoria-card reveal" data-level="3">
+        <span class="mentoria-badge mentoria-badge--3">Nível 3</span>
+        <h3>Europa</h3>
+        <p class="price">20.000 Kz</p>
+        <ul class="feature-list">
+          <li>Temu</li>
+          <li>Vinted</li>
+          <li>1 Cartão Visa Digital Europeu</li>
+          <li>Lista de fornecedores de euro</li>
+        </ul>
+        <a class="btn btn-outline btn-sm" href="https://wa.me/244924122757?text=Ol%C3%A1%2C%20quero%20a%20Mentoria%20N%C3%ADvel%203%20-%20Europa" target="_blank" rel="noopener">Solicitar Mentoria</a>
+      </div>
+
+      <div class="mentoria-card mentoria-card--featured reveal" data-level="4">
+        <span class="mentoria-badge mentoria-badge--4">Nível 4</span>
+        <h3>Profissional</h3>
+        <p class="price">25.000 Kz</p>
+        <ul class="feature-list">
+          <li>1688</li>
+          <li>Compra direta de fábrica</li>
+          <li>Negociação com fornecedores</li>
+          <li>Agentes de carga premium</li>
+        </ul>
+        <a class="btn btn-gold btn-sm" href="https://wa.me/244924122757?text=Ol%C3%A1%2C%20quero%20a%20Mentoria%20N%C3%ADvel%204%20-%20Profissional" target="_blank" rel="noopener">Solicitar Mentoria</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GALERIA DE MARCAS ============ -->
+  <section class="section section--light" id="marcas" aria-label="Plataformas parceiras">
+    <div class="section-head reveal">
+      <span class="eyebrow">Onde atuamos</span>
+      <h2>Plataformas com as quais trabalhamos</h2>
+    </div>
+    <div class="brand-wall reveal">
+      <span class="brand-chip"><img src="assets/logos/bybit-cartao.webp" alt="" width="16" height="16" loading="lazy">Bybit</span>
+      <span class="brand-chip"><img src="assets/logos/pexx.webp" alt="" width="16" height="16" loading="lazy">Pexx</span>
+      <span class="brand-chip"><img src="assets/logos/redotpay.webp" alt="" width="16" height="16" loading="lazy">RedotPay</span>
+      <span class="brand-chip"><img src="assets/logos/jeton.webp" alt="" width="16" height="16" loading="lazy">Jeton</span>
+      <span class="brand-chip"><img src="assets/logos/alibaba.webp" alt="" width="16" height="16" loading="lazy">Alibaba</span>
+      <span class="brand-chip"><img src="assets/logos/aliexpress.webp" alt="" width="16" height="16" loading="lazy">AliExpress</span>
+      <span class="brand-chip"><img src="assets/logos/shein.webp" alt="" width="16" height="16" loading="lazy">SHEIN</span>
+      <span class="brand-chip">Temu</span>
+      <span class="brand-chip"><img src="assets/logos/ebay.webp" alt="" width="16" height="16" loading="lazy">eBay</span>
+      <span class="brand-chip"><img src="assets/logos/vinted.webp" alt="" width="16" height="16" loading="lazy">Vinted</span>
+      <span class="brand-chip"><img src="assets/logos/1688.webp" alt="" width="16" height="16" loading="lazy">1688</span>
+      <span class="brand-chip"><img src="assets/logos/netflix.webp" alt="" width="16" height="16" loading="lazy">Netflix</span>
+      <span class="brand-chip">Amazon Prime</span>
+      <span class="brand-chip"><img src="assets/logos/disneyplus.webp" alt="" width="16" height="16" loading="lazy">Disney+</span>
+      <span class="brand-chip"><img src="assets/logos/hbomax.webp" alt="" width="16" height="16" loading="lazy">HBO Max</span>
+      <span class="brand-chip"><img src="assets/logos/spotify.webp" alt="" width="16" height="16" loading="lazy">Spotify</span>
+      <span class="brand-chip"><img src="assets/logos/youtube-premium.webp" alt="" width="16" height="16" loading="lazy">YouTube Premium</span>
+      <span class="brand-chip"><img src="assets/logos/googleads.webp" alt="" width="16" height="16" loading="lazy">Google Ads</span>
+      <span class="brand-chip"><img src="assets/logos/meta.webp" alt="" width="16" height="16" loading="lazy">Meta Ads</span>
+      <span class="brand-chip"><img src="assets/logos/tiktok-ads.webp" alt="" width="16" height="16" loading="lazy">TikTok Ads</span>
+    </div>
+  </section>
+
+  <!-- ============ AVALIAÇÕES ============ -->
+  <section class="section section--dark" aria-label="Avaliações de clientes">
+    <div class="section-head reveal">
+      <span class="eyebrow">Confiança</span>
+      <h2>O que dizem os nossos clientes</h2>
+    </div>
+    <div class="review-grid">
+      <blockquote class="review-card reveal">
+        <p>"Criei o meu cartão Visa em menos de um dia e já fiz a minha primeira compra internacional."</p>
+        <cite>— Cliente Horizon Digital, Luanda</cite>
+      </blockquote>
+      <blockquote class="review-card reveal">
+        <p>"A mentoria de importação mudou a forma como faço negócio. Recomendo o Nível 2."</p>
+        <cite>— Cliente Horizon Digital, Benguela</cite>
+      </blockquote>
+      <blockquote class="review-card reveal">
+        <p>"O site que pediram para o meu negócio ficou rápido, bonito e já veio com WhatsApp integrado."</p>
+        <cite>— Cliente Horizon Digital, Huambo</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section section--light" id="faq" aria-label="Perguntas frequentes">
+    <div class="section-head reveal">
+      <span class="eyebrow">Dúvidas</span>
+      <h2>Perguntas Frequentes</h2>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Como criar um Cartão Visa?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Escolhes o cartão pretendido, contactas-nos pelo WhatsApp, envias os dados necessários e procedemos à criação. É simples e acompanhado do início ao fim.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Quanto tempo demora?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>A maioria dos cartões digitais fica pronta em poucas horas. Cartões físicos e serviços de importação têm prazos próprios, informados no momento do pedido.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Como funciona a Mentoria?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Escolhes o nível adequado ao teu objetivo, recebes acesso às plataformas, fornecedores e ferramentas incluídas, e contas com o nosso acompanhamento direto.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Quais os métodos de pagamento?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Aceitamos transferência bancária e pagamento por referência multicaixa. Os detalhes são partilhados diretamente no WhatsApp após a confirmação do pedido.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          A Horizon Digital atende todo o país?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Sim. Todos os serviços digitais são prestados remotamente, por isso atendemos clientes em qualquer província de Angola.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA FINAL ============ -->
+  <section class="cta-final" id="contacto" aria-label="Contacto">
+    <div class="cta-final-inner reveal">
+      <h2>Pronto para dar o próximo passo?</h2>
+      <p>Fala connosco agora e resolve o teu pedido em minutos.</p>
+      <a class="btn btn-primary btn-lg" id="cta-whatsapp" href="https://wa.me/244924122757" target="_blank" rel="noopener">Falar no WhatsApp</a>
+
+      <div class="util-actions">
+        <button class="util-btn" id="copy-contact-btn" type="button">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          Copiar contacto
+        </button>
+        <button class="util-btn" id="share-btn" type="button">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="13.5" x2="15.4" y2="17.5"/><line x1="15.4" y1="6.5" x2="8.6" y2="10.5"/></svg>
+          Partilhar
+        </button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ RODAPÉ ============ -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="logo-text">Horizon<em>Digital</em></span>
+      <p>Soluções digitais de Angola para o mundo.</p>
+    </div>
+
+    <div class="footer-col">
+      <h3>Contacto</h3>
+      <ul>
+        <li><a href="mailto:horizondigitao@gmail.com">horizondigitao@gmail.com</a></li>
+        <li><a href="https://wa.me/244924122757" target="_blank" rel="noopener">924 122 757 (WhatsApp)</a></li>
+        <li>Angola</li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Serviços</h3>
+      <ul>
+        <li><a href="#cartoes-visa">Cartões Visa</a></li>
+        <li><a href="#streaming">Streaming</a></li>
+        <li><a href="#trafego-pago">Tráfego Pago</a></li>
+        <li><a href="#criacao-sites">Criação de Sites</a></li>
+        <li><a href="#design-digital">Design Digital</a></li>
+        <li><a href="#importacao">Importação</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Legal</h3>
+      <ul>
+        <li><a href="politica-de-privacidade.html">Política de Privacidade</a></li>
+        <li><a href="termos-de-servico.html">Termos de Serviço</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Redes Sociais</h3>
+      <ul class="social-list">
+        <li><a href="#" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="#" target="_blank" rel="noopener">Facebook</a></li>
+        <li><a href="#" target="_blank" rel="noopener">TikTok</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© <span id="ano-atual"></span> Horizon Digital. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<!-- ============ VOLTAR AO TOPO ============ -->
+<button class="back-to-top" id="back-to-top" aria-label="Voltar ao topo">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+</button>
+
+<!-- ============ NOTIFICAÇÕES TOAST ============ -->
+<div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+<!-- ============ BOTÃO WHATSAPP FLUTUANTE ============ -->
+<div class="wa-float" id="wa-float">
+  <button class="wa-float-btn" id="wa-float-btn" aria-expanded="false" aria-controls="wa-menu" aria-label="Abrir menu do WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-1.9-.9-.3-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.1.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.5-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.6-1.5-.8-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.3.2-.6.2-1.1.2-1.3-.1-.1-.3-.2-.6-.3z"/><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
+  </button>
+  <div class="wa-menu" id="wa-menu" role="menu" hidden>
+    <p class="wa-menu-title">Em que podemos ajudar?</p>
+    <a role="menuitem" href="https://wa.me/244924122757?text=Ol%C3%A1%2C%20quero%20falar%20sobre%20Cart%C3%A3o%20Visa"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg> Cartão Visa</a>
+    <a role="menuitem" href="https://wa.me/244924122757?text=Ol%C3%A1%2C%20quero%20falar%20sobre%20Importa%C3%A7%C3%A3o"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 8l-9-5-9 5v8l9 5 9-5V8z"/></svg> Importação</a>
+    <a role="menuitem" href="https://wa.me/244924122757?text=Ol%C3%A1%2C%20quero%20falar%20sobre%20Streaming"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg> Streaming</a>
+    <a role="menuitem" href="https://wa.me/244924122757?text=Ol%C3%A1%2C%20quero%20falar%20sobre%20Tr%C3%A1fego%20Pago"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg> Tráfego Pago</a>
+    <a role="menuitem" href="https://wa.me/244924122757?text=Ol%C3%A1%2C%20quero%20falar%20sobre%20Cria%C3%A7%C3%A3o%20de%20Sites"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/></svg> Criação de Sites</a>
+    <a role="menuitem" href="https://wa.me/244924122757?text=Ol%C3%A1%2C%20quero%20falar%20sobre%20Design%20Digital"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"/></svg> Design Digital</a>
+    <a role="menuitem" href="https://wa.me/244924122757?text=Ol%C3%A1%2C%20quero%20falar%20sobre%20Mentoria"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg> Mentoria</a>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+<script src="main.js" defer></script>
 </body>
 </html>

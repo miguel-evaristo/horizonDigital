@@ -1,0 +1,12 @@
+{
+  "name": "Horizon Digital",
+  "short_name": "Horizon Digital",
+  "description": "Cartões Visa, Importação, Streaming, Tráfego Pago, Sites e Design Digital — de Angola para o mundo.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0D3B3A",
+  "theme_color": "#0D3B3A",
+  "icons": [
+    { "src": "assets/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
