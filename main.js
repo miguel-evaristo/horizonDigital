@@ -423,6 +423,37 @@
     results.addEventListener("click", function (e) {
       if (e.target.tagName === "A") results.hidden = true;
     });
+
+    /* Navegação por teclado: setas, Enter, Esc */
+    input.addEventListener("keydown", function (e) {
+      var links = Array.prototype.slice.call(results.querySelectorAll("a"));
+      var active = results.querySelector("a.is-active");
+      var idx = active ? links.indexOf(active) : -1;
+
+      if (e.key === "Escape") {
+        results.hidden = true;
+        input.blur();
+        return;
+      }
+      if (!links.length) return;
+
+      if (e.key === "ArrowDown") {
+        e.preventDefault();
+        if (active) active.classList.remove("is-active");
+        idx = (idx + 1) % links.length;
+        links[idx].classList.add("is-active");
+        links[idx].scrollIntoView({ block: "nearest" });
+      } else if (e.key === "ArrowUp") {
+        e.preventDefault();
+        if (active) active.classList.remove("is-active");
+        idx = idx <= 0 ? links.length - 1 : idx - 1;
+        links[idx].classList.add("is-active");
+        links[idx].scrollIntoView({ block: "nearest" });
+      } else if (e.key === "Enter") {
+        e.preventDefault();
+        (active || links[0]).click();
+      }
+    });
   })();
 
   /* ---------- Fundo com partículas digitais no Hero ---------- */

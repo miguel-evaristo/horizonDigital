@@ -1,0 +1,9 @@
+# Garante que ficheiros binários nunca são alterados (quebra de linha, etc.)
+# pelo Git ao fazer commit/checkout no Windows — causa comum de imagens
+# que aparecem "partidas" depois do push.
+*.webp binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.svg binary
+*.ico binary
