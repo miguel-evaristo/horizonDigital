@@ -65,6 +65,50 @@
     requestAnimationFrame(raf);
   })();
 
+  /* ---------- Selos de marca (gerados por código, sem ficheiros externos) ---------- */
+  (function brandBadges() {
+    var BRANDS = {
+      // Cartões Visa
+      pexx:      { initials: "P",  color: "#12B76A" },
+      bybit:     { initials: "B",  color: "#F7A600" },
+      jeton:     { initials: "J",  color: "#EE3B2F" },
+      redotpay:  { initials: "R",  color: "#E31C3D" },
+      visa:      { initials: "VISA", color: "#1A1F71" },
+      // Streaming
+      netflix:      { initials: "N", color: "#E50914" },
+      primevideo:   { initials: "P", color: "#1F9BF0" },
+      disneyplus:   { initials: "D", color: "#113CCF" },
+      hbomax:       { initials: "H", color: "#6C4CFF" },
+      youtube:      { initials: "Y", color: "#FF0000" },
+      spotify:      { initials: "S", color: "#1ED760" },
+      // Importação
+      alibaba:    { initials: "A",  color: "#FF6A00" },
+      aliexpress: { initials: "AE", color: "#FF4747" },
+      shein:      { initials: "S",  color: "#151515" },
+      temu:       { initials: "T",  color: "#FB6E28" },
+      ebay:       { initials: "e",  color: "#E53238" },
+      vinted:     { initials: "V",  color: "#09B1BA" },
+      i1688:      { initials: "16", color: "#FF6A00" },
+      worten:     { initials: "W",  color: "#E4032E" },
+      amazon:     { initials: "a",  color: "#232F3E" },
+      // Tráfego pago
+      googleads: { initials: "G", color: "#4285F4" },
+      meta:      { initials: "M", color: "#0081FB" },
+      facebook:  { initials: "f", color: "#1877F2" },
+      instagram: { initials: "I", color: "#C2298A" },
+      tiktok:    { initials: "T", color: "#111111" }
+    };
+
+    document.querySelectorAll("[data-brand]").forEach(function (el) {
+      var key = el.getAttribute("data-brand");
+      var brand = BRANDS[key];
+      if (!brand) return;
+      el.textContent = brand.initials;
+      el.style.background = brand.color;
+      el.classList.add("brand-badge");
+    });
+  })();
+
   /* ---------- Tema claro/escuro ---------- */
   (function themeToggle() {
     var btn = document.getElementById("theme-toggle");
@@ -383,7 +427,7 @@
       { label: "Tráfego Pago", href: "#trafego-pago", terms: ["trafego", "tráfego", "anuncios", "anúncios", "publicidade", "ads"] },
       { label: "Criação de Sites", href: "#criacao-sites", terms: ["site", "sites", "landing", "página", "pagina"] },
       { label: "Design Digital", href: "#design-digital", terms: ["design", "flyer", "curriculo", "currículo", "carta"] },
-      { label: "Importação — Alibaba, SHEIN, Temu...", href: "#importacao", terms: ["importacao", "importação", "alibaba", "shein", "temu", "aliexpress", "ebay", "vinted", "1688"] },
+      { label: "Importação — Alibaba, SHEIN, Temu...", href: "#importacao", terms: ["importacao", "importação", "alibaba", "shein", "temu", "aliexpress", "ebay", "vinted", "1688", "worten", "amazon"] },
       { label: "Mentoria de Importação", href: "#mentoria", terms: ["mentoria", "aprender", "negocio", "negócio", "curso"] }
     ];
 

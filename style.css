@@ -496,21 +496,23 @@ button{ font-family:inherit; }
 .trust-card h3{ font-size:1.05rem; margin-bottom:.4rem; }
 .trust-card p{ color:var(--ink-dim); font-size:.88rem; margin:0; }
 
+/* =========================== SELOS DE MARCA (gerados, sem ficheiros externos) =========================== */
+.brand-badge{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:44px; height:44px; border-radius:12px;
+  font-family:var(--font-display); font-weight:700; font-size:1rem;
+  color:#fff; letter-spacing:-0.02em;
+  box-shadow:0 2px 6px rgba(0,0,0,0.25);
+  flex-shrink:0;
+}
+.brand-badge.brand-badge--sm{ width:26px; height:26px; border-radius:8px; font-size:.68rem; }
+.brand-badge.brand-badge--lg{ width:56px; height:56px; border-radius:14px; font-size:1.2rem; margin:0 auto .8rem; }
+.brand-chip{ display:inline-flex; align-items:center; gap:.5rem; }
+
 /* =========================== ÍCONES E LOGÓTIPOS =========================== */
 .service-block{ position:relative; }
 .h3-icon{ vertical-align:-4px; margin-right:.4rem; color:var(--gold); }
-.brand-chip img{ vertical-align:-3px; margin-right:.4rem; }
-.card-logo{
-  display:block; margin:0 auto .8rem; height:28px; width:auto; max-width:70%;
-  object-fit:contain; padding:6px 10px; background:#fff; border-radius:8px;
-}
-.card-logo-row{ display:flex; gap:.6rem; justify-content:center; align-items:center; margin-top:1rem; flex-wrap:wrap; }
-.card-logo-row img{
-  height:20px; width:20px; padding:5px; box-sizing:content-box;
-  background:#fff; border-radius:8px; object-fit:contain;
-  opacity:.92; transition:opacity .25s var(--ease), transform .25s var(--ease);
-}
-.card-logo-row img:hover{ opacity:1; transform:translateY(-2px); }
+.card-logo-row{ display:flex; gap:.55rem; justify-content:center; align-items:center; margin-top:1rem; flex-wrap:wrap; }
 
 /* =========================== PARTÍCULAS POR SERVIÇO (hover) =========================== */
 .particle-layer{
